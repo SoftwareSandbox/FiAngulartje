@@ -1,7 +1,18 @@
 How to contribute
 =================
 
+## Some planning necessary
+
+Fork and submit pull requests modifying this file to show **your** availability/plan to collaborate/contribute. GL HF!
+
+|Name|16/12|17/12|18/12|22/12|23/12|29/12|30/12|
+|---|---|---|---|---|---|---|---|
+|Sch3lp|v|v|v|v|v|v|v|
+|You?|v|v|v|v|v|v|v|
+
+
 ##Fork this repo
+
 Fork it baby!
 
 ##Never forget...
