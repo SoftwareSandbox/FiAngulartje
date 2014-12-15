@@ -1,6 +1,6 @@
 /* Space out content a bit */
 body {
-  padding-top: 20px;
+  padding-top: 50px; /* necessary for navbar that remains at the top */
   padding-bottom: 20px;
 }
 

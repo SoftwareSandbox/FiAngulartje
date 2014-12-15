@@ -23,19 +23,30 @@
     <!-- Add your site or application content here -->
     <div class="container">
       <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a ng-href="#">Home</a></li>
-          <li><a ng-href="#/about">About</a></li>
-          <li><a ng-href="#">Contact</a></li>
-        </ul>
-        <h3 class="text-muted">fiAngulartje</h3>
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+          <div class="container">
+            <h4 class="text-muted">'t Fiantje</h4>
+            <ul class="nav nav-pills">
+                <li class="active"><a ng-href="#">Home</a></li>
+                <li><a ng-href="#/menu">Menu</a></li>
+                <li><a ng-href="#/contact">Contact</a></li>
+            </ul>
+          </div>
+        </nav>
       </div>
 
       <div ng-view=""></div>
 
-      <div class="footer">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-      </div>
+      <footer>
+          <p>©'t Fiantje · Hertogstraat 98, 3001 Heverlee · Tel: 016/40.34.96 · Fax: 016/40.20.01 · <a href="mailto:Filip@fiantje.be">Filip@fiantje.be</a> · <a href="http://facebook.com/broodjeszaak.tfiantje">'t Fiantje on Facebook</a> · Built with <span class="glyphicon glyphicon-heart"></span> by Craftsmen</p>
+          <div class="language-toggle" role="group">
+          <ul class="nav">
+            <li><a ng-href="#/" class="navbar-link navbar-right active">English</a></li>
+            <li><a ng-href="#/" class="navbar-link navbar-right">Nederlands</a></li>
+            <li><a ng-href="#/" class="navbar-link navbar-right">Français</a></li>
+          </ul>
+          </div>
+      </footer>
     </div>
 
 
@@ -73,8 +84,8 @@
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/controllers/home.js"></script>
         <!-- endbuild -->
 </body>
 </html>

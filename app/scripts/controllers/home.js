@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name fiAngulartjeApp.controller:MainCtrl
+ * @name fiAngulartjeApp.controller:HomeCtrl
  * @description
- * # MainCtrl
+ * # HomeCtrl
  * Controller of the fiAngulartjeApp
  */
 angular.module('fiAngulartjeApp')
-  .controller('MainCtrl', function ($scope) {
+  .controller('HomeCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
