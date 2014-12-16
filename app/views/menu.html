@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-sm-6 col-md-4" ng-repeat="category in categories">
+    <div class="thumbnail">
+        <a href="#/products?c={{category.id}}">
+            <img src="{{category.img}}" alt="{{category.name}}">
+            <div class="caption">
+                <h3>{{category.name}}</h3>
+            </div>
+        </a>
+    </div>
+  </div>
+</div>
+<!-- <ul class="categories">
+    <li ng-repeat="category in categories"><a ng-href="#/products?c={{category.id}}">{{category.name}}</a></li>
+</ul> -->

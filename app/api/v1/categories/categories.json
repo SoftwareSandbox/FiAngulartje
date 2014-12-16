@@ -1,0 +1,27 @@
+[
+  {
+    "id" : "1",
+    "name": "Cheese",
+    "img": "/images/250px-Sandvich.png"
+  },
+  {
+    "id" : "2",
+    "name": "Ham",
+    "img": "/images/250px-Sandvich.png"
+  },
+  {
+    "id" : "3",
+    "name": "Fish",
+    "img": "/images/250px-Sandvich.png"
+  },
+  {
+    "id" : "4",
+    "name": "Salads",
+    "img": "/images/250px-Sandvich.png"
+  },
+  {
+    "id" : "5",
+    "name": "Specials",
+    "img": "/images/250px-Sandvich.png"
+  }
+]
