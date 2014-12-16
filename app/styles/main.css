@@ -2,7 +2,13 @@
 body {
   padding-top: 50px; /* necessary for navbar that remains at the top */
   padding-bottom: 20px;
+  background: url('../images/Salmon_Cream_Cheese_Sandwiches.jpg');
+  background-position: top -100px center;
 }
+
+.container {
+}
+
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
