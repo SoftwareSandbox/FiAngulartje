@@ -6,26 +6,24 @@ describe('Controller: MenuCtrl', function () {
   beforeEach(module('fiAngulartjeApp'));
 
   var MenuCtrl,
-    scope, httpBackend;
+    scope, 
+    categories;
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller, $rootScope, $injector) {
+  beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    httpBackend = $injector.get('$httpBackend');
+    categories = {
+      query: function(){ return [{'id':'1'},{'id':'2'}]; }
+    };
     MenuCtrl = $controller('MenuCtrl', {
-      $scope: scope
+      $scope: scope,
+      Categories: categories
     });
-    httpBackend
-      .expect('GET','/api/v1/categories/categories.json')
-      .respond([
-        {'id' : '1', 'name': 'Cheese', 'img': '/images/250px-Sandvich.png'},
-        {'id' : '2', 'name': 'Ham', 'img': '/images/250px-Sandvich.png'}]
-      );
   }));
 
   it('should get a list of categories to put on the scope', function () {
-    httpBackend.flush();
     expect(scope.categories.length).toBe(2);
-    expect(scope.categories[0]).toEqual({'id' : '1', 'name': 'Cheese', 'img': '/images/250px-Sandvich.png'});
+    expect(scope.categories[0]).toEqual({'id' : '1'});
+    expect(scope.categories[1]).toEqual({'id' : '2'});
   });
 });

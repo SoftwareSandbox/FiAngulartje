@@ -8,8 +8,6 @@
  * Controller of the fiAngulartjeApp
  */
 angular.module('fiAngulartjeApp')
-  .controller('MenuCtrl', function ($scope, $http) {
-    $http.get('/api/v1/categories/categories.json').success(function(data) {
-      $scope.categories = data;
-    });
-  });
+  .controller('MenuCtrl', ['$scope', 'Categories', function($scope, Categories) {
+    $scope.categories = Categories.query();
+  }]);
