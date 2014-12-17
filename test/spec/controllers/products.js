@@ -6,17 +6,36 @@ describe('Controller: ProductsCtrl', function () {
   beforeEach(module('fiAngulartjeApp'));
 
   var ProductsCtrl,
-    scope;
+    scope,
+    category,
+    $routeParams,
+    $httpBackend;
+
+  category = function () {
+    return {'id' : '1', 'name': 'Cheese'};
+  };
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller, $rootScope) {
+  beforeEach(inject(function ($controller, $rootScope, $injector) {
     scope = $rootScope.$new();
+    $routeParams = $injector.get('$routeParams');
+    $httpBackend = $injector.get('$httpBackend');
+    
+    $routeParams.catId = '1';
+    $httpBackend
+      .expectGET('api/v1/categories/1.json')
+      .respond(category());
+    
     ProductsCtrl = $controller('ProductsCtrl', {
       $scope: scope
     });
+    
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(scope.awesomeThings.length).toBe(3);
+  it('should add the given category on the scope', function () {
+    $httpBackend.flush();
+
+    angular.equals(scope.category, category());
   });
+
 });
