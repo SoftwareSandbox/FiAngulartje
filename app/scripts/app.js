@@ -31,6 +31,18 @@ angular
         templateUrl: 'views/menu.html',
         controller: 'MenuCtrl'
       })
+      .when('/product', {
+        templateUrl: 'views/product.html',
+        controller: 'ProductCtrl'
+      })
+      .when('/products', {
+        templateUrl: 'views/products.html',
+        controller: 'ProductsCtrl'
+      })
+      .when('/products/category/:catId', {
+        templateUrl: 'views/products.html',
+        controller: 'ProductsCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

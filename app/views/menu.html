@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-sm-6 col-md-4" ng-repeat="category in categories">
     <div class="thumbnail">
-        <a href="#/products?c={{category.id}}">
+        <a href="#/products/category/{{category.id}}">
             <img src="{{category.img}}" alt="{{category.name}}">
             <div class="caption">
                 <h3>{{category.name}}</h3>

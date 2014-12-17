@@ -10,7 +10,5 @@
 angular.module('fiAngulartjeApp')
   .service('Categories', function ($resource) {
     // AngularJS will instantiate a singleton by calling "new" on this function
-    return $resource('api/v1/categories/categories.json', {}, {
-        query: { method:'GET', isArray:true }
-    });
+    return $resource('api/v1/categories/:categoryId.json',{categoryId:'categories'});
   });
