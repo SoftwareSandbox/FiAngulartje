@@ -76,7 +76,6 @@ module.exports = function (grunt) {
           open: true,
           middleware: function (connect) {
             return [
-              require('grunt-connect-prism/middleware'),
               connect.static('.tmp'),
               connect().use(
                 '/bower_components',
