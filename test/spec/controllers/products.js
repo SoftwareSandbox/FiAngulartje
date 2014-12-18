@@ -8,6 +8,7 @@ describe('Controller: ProductsCtrl', function () {
   var ProductsCtrl,
     scope,
     category, products, /* stubbed json */
+    baseurl,
     $routeParams,
     $httpBackend;
 
@@ -25,13 +26,14 @@ describe('Controller: ProductsCtrl', function () {
     scope = $rootScope.$new();
     $routeParams = $injector.get('$routeParams');
     $httpBackend = $injector.get('$httpBackend');
+    baseurl = $injector.get('Fiazard').baseurl;
     
     $routeParams.catId = '1';
     $httpBackend
-      .expectGET('api/v1/categories/1.json')
+      .expectGET(baseurl + 'api/v1/categories/1')
       .respond(category());
     $httpBackend
-      .expectGET('api/v1/products?categoryId=1')
+      .expectGET(baseurl + 'api/v1/products?categoryId=1')
       .respond(products());
     
     ProductsCtrl = $controller('ProductsCtrl', {
