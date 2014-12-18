@@ -2,6 +2,22 @@
   {
     "request": {
       "url": "^/api/v1/products$",
+      "method": "GET",
+      "query": {
+        "categoryId" : "1"
+      }
+    },
+    "response": {
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "file": "api/v1/products/categoryId-1.json"
+    }
+  },
+  {
+    "request": {
+      "url": "^/api/v1/products$",
       "method": "GET"
     },
     "response": {
@@ -9,7 +25,7 @@
       "headers": {
         "Content-Type": "application/json"
       },
-      "file": "./api/v1/products/products.json"
+      "file": "api/v1/products/products.json"
     }
   },
   {
@@ -22,23 +38,7 @@
       "headers": {
         "Content-Type": "application/json"
       },
-      "file": "./api/v1/products/1.json"
-    }
-  },
-  {
-    "request": {
-      "url": "^/api/v1/products$",
-      "method": "GET",
-      "query": {
-        "categoryId" : "1"
-      }
-    },
-    "response": {
-      "status": 200,
-      "headers": {
-        "Content-Type": "application/json"
-      },
-      "file": "./api/v1/products/categoryId-1.json"
+      "file": "api/v1/products/1.json"
     }
   }
 ]

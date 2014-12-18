@@ -9,8 +9,7 @@
       "headers": {
         "Content-Type": "application/json"
       },
-      "file": "api/v1/categories/categories.json",
-      "body": {"message":"You misconfigured your json files, idiot"}
+      "file": "api/v1/categories/categories.json"
     }
   },
   {
@@ -23,8 +22,7 @@
       "headers": {
         "Content-Type": "application/json"
       },
-      "file": "api/v1/categories/1.json",
-      "body": {"message":"You misconfigured your json files, idiot"}
+      "file": "api/v1/categories/1.json"
     }
   }
 ]
