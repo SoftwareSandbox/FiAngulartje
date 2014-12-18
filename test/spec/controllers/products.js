@@ -7,12 +7,17 @@ describe('Controller: ProductsCtrl', function () {
 
   var ProductsCtrl,
     scope,
-    category,
+    category, products, /* stubbed json */
     $routeParams,
     $httpBackend;
 
   category = function () {
-    return {'id' : '1', 'name': 'Cheese'};
+    return {'id': '1', 'name': 'Cheese'};
+  };
+  products = function () {
+    return [{'id': '1', 'categoryId': '1', 'name': 'Club cheese', 'composition': ['gouda cheese','salad','tomatoes','egg'], 'sauces':['mayonaise']},
+            {'id': '2', 'categoryId': '1', 'name': 'Club Breeze', 'composition': ['brie','walnuts'], 'sauces':['honey']}
+           ];
   };
 
   // Initialize the controller and a mock scope
@@ -25,6 +30,9 @@ describe('Controller: ProductsCtrl', function () {
     $httpBackend
       .expectGET('api/v1/categories/1.json')
       .respond(category());
+    $httpBackend
+      .expectGET('api/v1/products?categoryId=1')
+      .respond(products());
     
     ProductsCtrl = $controller('ProductsCtrl', {
       $scope: scope
@@ -32,10 +40,16 @@ describe('Controller: ProductsCtrl', function () {
     
   }));
 
-  it('should add the given category on the scope', function () {
+  it('should add the given category to the scope', function () {
     $httpBackend.flush();
 
     angular.equals(scope.category, category());
+  });
+
+  it('should add the products for the given category to the scope', function () {
+    $httpBackend.flush();
+
+    angular.equals(scope.products, products());
   });
 
 });

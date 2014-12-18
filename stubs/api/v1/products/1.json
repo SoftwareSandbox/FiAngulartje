@@ -1,0 +1,14 @@
+{
+    "id": "1",
+    "categoryId": "1",
+    "name": "Club cheese",
+    "composition": [
+      "gouda cheese",
+      "salad",
+      "tomatoes",
+      "egg"
+    ],
+    "sauces": [
+      "mayonaise"
+    ]
+}

@@ -76,6 +76,7 @@ module.exports = function (grunt) {
           open: true,
           middleware: function (connect) {
             return [
+              require('grunt-connect-prism/middleware'),
               connect.static('.tmp'),
               connect().use(
                 '/bower_components',
@@ -106,6 +107,18 @@ module.exports = function (grunt) {
         options: {
           open: true,
           base: '<%= yeoman.dist %>'
+        }
+      }
+    },
+
+    stubby: {
+      stubsServer: {
+        files: [{
+          src: [ 'stubs/*.{json,yaml,js}' ]
+        }],
+        options: {
+          stubs: 8090,
+          relativeFilesPath: 'stubs/'
         }
       }
     },
@@ -365,6 +378,7 @@ module.exports = function (grunt) {
       'wiredep',
       'concurrent:server',
       'autoprefixer',
+      'stubby',
       'connect:livereload',
       'watch'
     ]);
