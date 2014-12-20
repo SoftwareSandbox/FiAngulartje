@@ -32,3 +32,6 @@ Fork it baby!
   grunt serve
 ````
 3. Your default browser should have popped up with a working initial screen of the application. 
+
+##Suggestions
+You might want to install the [AngularJS](https://github.com/angular-ui/AngularJS-sublime-package) package if you're using SublimeText
