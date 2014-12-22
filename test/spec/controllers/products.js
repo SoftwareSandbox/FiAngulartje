@@ -9,7 +9,7 @@ describe('Controller: ProductsCtrl', function () {
     scope,
     category, products, /* stubbed json */
     baseurl,
-    $routeParams,
+    $stateParams,
     $httpBackend;
 
   category = function () {
@@ -22,13 +22,14 @@ describe('Controller: ProductsCtrl', function () {
   };
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller, $rootScope, $injector) {
+  beforeEach(inject(function ($controller, $rootScope, _$stateParams_, _$httpBackend_, _Fiazard_) {
     scope = $rootScope.$new();
-    $routeParams = $injector.get('$routeParams');
-    $httpBackend = $injector.get('$httpBackend');
-    baseurl = $injector.get('Fiazard').baseurl;
+    $stateParams = _$stateParams_;
+    $httpBackend = _$httpBackend_;
+    // $httpBackend = $injector.get('$httpBackend');
+    baseurl = _Fiazard_.baseurl;
     
-    $routeParams.catId = '1';
+    $stateParams.categoryId = '1';
     $httpBackend
       .expectGET(baseurl + 'api/v1/categories/1')
       .respond(category());
