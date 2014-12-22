@@ -13,37 +13,36 @@ angular
     'ngAnimate',
     'ngCookies',
     'ngResource',
-    'ngRoute',
+    'ui.router',
     'ngSanitize',
     'ngTouch'
   ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
+  .config(function ($stateProvider, $urlRouterProvider) {
+    $urlRouterProvider.otherwise('/');
+    $stateProvider
+      .state('home', {
+        url: '/',
         templateUrl: 'views/home.html',
         controller: 'HomeCtrl'
       })
-      .when('/about', {
+      .state('about', {
+        url: '/about',
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       })
-      .when('/menu', {
+      .state('menu', {
+        url: '/menu',
         templateUrl: 'views/menu.html',
         controller: 'MenuCtrl'
       })
-      .when('/product', {
-        templateUrl: 'views/product.html',
-        controller: 'ProductCtrl'
-      })
-      .when('/products', {
+      // .state('products',{
+      //   url: '/products',
+      //   templateUrl: 'views/products.html',
+      //   controller: 'ProductsCtrl'
+      // })
+      .state('products',{
+        url: '/products/category/:categoryId',
         templateUrl: 'views/products.html',
         controller: 'ProductsCtrl'
-      })
-      .when('/products/category/:catId', {
-        templateUrl: 'views/products.html',
-        controller: 'ProductsCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
       });
   });

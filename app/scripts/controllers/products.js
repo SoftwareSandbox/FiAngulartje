@@ -8,7 +8,7 @@
  * Controller of the fiAngulartjeApp
  */
 angular.module('fiAngulartjeApp')
-  .controller('ProductsCtrl', ['$scope','$routeParams','Categories', 'Products', function ($scope, $routeParams, Categories, Products) {
-      $scope.category = Categories.get({categoryId : $routeParams.catId});
-      $scope.products = Products.byCategory({categoryId: $routeParams.catId});
+  .controller('ProductsCtrl', ['$scope','$stateParams','Categories', 'Products', function ($scope, $stateParams, Categories, Products) {
+        $scope.category = Categories.get({categoryId : $stateParams.categoryId});
+        $scope.products = Products.byCategory({categoryId: $stateParams.categoryId});
     }]);
