@@ -8,6 +8,7 @@ Fork and submit pull requests modifying this file to show **your** availability/
 |Name|16/12|17/12|18/12|22/12|23/12|29/12|30/12|
 |---|---|---|---|---|---|---|---|
 |Sch3lp|v|v|v|v|v|v|v|
+|Jooones|x|x|x|v|v|?|?|
 |You?|v|v|v|v|v|v|v|
 
 
