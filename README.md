@@ -5,3 +5,5 @@ Learning project in which we try to make our sandwich ordering site better. This
 [![Build Status](https://travis-ci.org/Sch3lp/FiAngulartje.svg?branch=master)](https://travis-ci.org/Sch3lp/FiAngulartje)
 
 Check [this important info](CONTRIBUTE.md) if you're interested in Contributing.
+
+Ceci n'est pas une test.
