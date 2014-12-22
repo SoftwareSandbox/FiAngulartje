@@ -6,4 +6,4 @@ Learning project in which we try to make our sandwich ordering site better. This
 
 Check [this important info](CONTRIBUTE.md) if you're interested in Contributing.
 
-Ceci n'est pas une test.
+Ceci n'est pas une test. 
