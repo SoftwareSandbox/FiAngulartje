@@ -29,6 +29,7 @@ Fork it baby!
   sudo npm install -g yo
   sudo npm install -g generator-angular
   sudo npm install -g bower
+  sudo npm install -g grunt
   sudo npm install
   bower install
   grunt serve
