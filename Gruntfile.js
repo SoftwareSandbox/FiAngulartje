@@ -21,6 +21,27 @@ module.exports = function (grunt) {
     dist: 'dist'
   };
 
+  /* Proxy configuration so that requests of our Angular Services that go to http://localhost:9000/api/...  get redirected to the configured proxy.
+   * When we use stubby to mock out our back-end it will serve our stubbed api at localhost:8090/api, and
+   * when we want to run vs our actual back-end, dropwizard will serve at localhost:8080/api.
+   */
+  var proxyForStubby = {
+    context: '/api',
+    host: 'localhost',
+    port: 8090,
+    https: false
+  };
+  var proxyForDropwizard = {
+    context: '/api',
+    host: 'localhost',
+    port: 8080,
+    https: false,
+    rewrite: {
+      "^/api" : ""
+    }
+  };
+  var proxySnippet = require('grunt-connect-proxy/lib/utils').proxyRequest;
+
   // Define the configuration for all the tasks
   grunt.initConfig({
 
@@ -72,10 +93,27 @@ module.exports = function (grunt) {
         livereload: 35729
       },
       livereload: {
+        proxies: [ proxyForStubby ],
         options: {
           open: true,
           middleware: function (connect) {
+            // if (!Array.isArray(options.base)) {
+            //     options.base = [options.base];
+            // }
+            // var middlewares = [ proxyForStubby ];
+
+            // // Serve static files.
+            // options.base.forEach(function(base) {
+            //     middlewares.push(connect.static(base));
+            // });
+
+            // // Make directory browse-able.
+            // var directory = options.directory || options.base[options.base.length - 1];
+            // middlewares.push(connect.directory(directory));
+
+            // return middlewares;
             return [
+              proxySnippet,
               connect.static('.tmp'),
               connect().use(
                 '/bower_components',
@@ -87,10 +125,12 @@ module.exports = function (grunt) {
         }
       },
       test: {
+        proxies: [ proxyForStubby ],
         options: {
           port: 9001,
           middleware: function (connect) {
             return [
+              proxySnippet,
               connect.static('.tmp'),
               connect.static('test'),
               connect().use(
@@ -106,6 +146,23 @@ module.exports = function (grunt) {
         options: {
           open: true,
           base: '<%= yeoman.dist %>'
+        }
+      },
+      integrate: {
+        proxies: [proxyForDropwizard ],
+        options: {
+          open: true,
+          base: '<%= yeoman.dist %>',
+          middleware: function (connect, options) {
+             return [
+                // Include the proxy first
+                proxySnippet,
+                // Serve static files.
+                connect.static(String(options.base)),
+                // Make empty directories browsable.
+                connect.directory(String(options.base))
+             ];
+          }
         }
       }
     },
@@ -371,10 +428,14 @@ module.exports = function (grunt) {
     if (target === 'dist') {
       return grunt.task.run(['build', 'connect:dist:keepalive']);
     }
+    if (target === 'integrate') {
+      return grunt.task.run(['build', 'configureProxies:integrate', 'connect:integrate:keepalive']);
+    }
 
     grunt.task.run([
       'clean:server',
       'wiredep',
+      'configureProxies:livereload',
       'concurrent:server',
       'autoprefixer',
       'stubby',
