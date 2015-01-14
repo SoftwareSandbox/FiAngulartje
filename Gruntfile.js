@@ -37,7 +37,7 @@ module.exports = function (grunt) {
     port: 8080,
     https: false,
     rewrite: {
-      "^/api" : ""
+      '^/api' : ''
     }
   };
   var proxySnippet = require('grunt-connect-proxy/lib/utils').proxyRequest;
