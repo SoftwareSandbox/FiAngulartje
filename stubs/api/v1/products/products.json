@@ -11,7 +11,9 @@
     ],
     "sauces": [
       "mayonaise"
-    ]
+    ],
+    "type": "Club",
+    "price": 2.0
   },
   {
     "id": "2",
@@ -23,7 +25,9 @@
     ],
     "sauces": [
       "honey"
-    ]
+    ],
+    "type": "Special",
+    "price": 3.5
   },
   {
     "id": "3",
@@ -37,7 +41,9 @@
     ],
     "sauces": [
       "mayonaise"
-    ]
+    ],
+    "type": "Club",
+    "price": 2.0
   },
   {
     "id": "4",
@@ -51,6 +57,8 @@
     ],
     "sauces": [
       "mayonaise"
-    ]
+    ],
+    "type": "Club",
+    "price": 3
   }
 ]

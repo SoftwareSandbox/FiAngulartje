@@ -11,18 +11,22 @@
     ],
     "sauces": [
       "mayonaise"
-    ]
+    ],
+    "type": "Club",
+    "price": 2.0
   },
   {
     "id": "2",
     "categoryId": "1",
-    "name": "Club Breeze",
+    "name": "Breeze",
     "composition": [
       "brie",
       "walnuts"
     ],
     "sauces": [
       "honey"
-    ]
+    ],
+    "type": "Special",
+    "price": 3.5
   }
 ]
