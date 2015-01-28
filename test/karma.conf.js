@@ -29,7 +29,9 @@ module.exports = function(config) {
       'bower_components/angular-touch/angular-touch.js',
       'app/scripts/**/*.js',
       'test/mock/**/*.js',
-      'test/spec/**/*.js'
+      'test/spec/**/*.js',
+      // directives
+      'app/views/directives/*.html'
     ],
 
     // list of files / patterns to exclude
@@ -53,7 +55,8 @@ module.exports = function(config) {
     // Which plugins to enable
     plugins: [
       'karma-phantomjs-launcher',
-      'karma-jasmine'
+      'karma-jasmine',
+      'karma-ng-html2js-preprocessor'
     ],
 
     // Continuous Integration mode
@@ -72,5 +75,16 @@ module.exports = function(config) {
     // },
     // URL root prevent conflicts with the site root
     // urlRoot: '_karma_'
+
+    // to "serve" directive html's in specs
+    preprocessors: {
+      '**/*.html': ['ng-html2js']
+    },
+
+    ngHtml2JsPreprocessor: {
+      // strip this from the file path, so we can load our beforeEach modules looking like they would normally
+      stripPrefix: 'app/',
+    }
+
   });
 };
