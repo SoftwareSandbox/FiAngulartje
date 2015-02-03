@@ -1,1 +1,11 @@
-{{product.name}} | {{product.composition}} | {{product.sauces}} | {{product.price}}
+<!--{{product.name}} | {{product.composition}} | {{product.sauces}} | {{product.price}}-->
+<div class="media">
+	<a ng-href="/products/{{product.id}}" class="pull-left">
+    	<img class="media-object" src="/images/250px-Sandvich.png">
+    </a>
+    <div class="media-body">
+        <span>{{product.name}}</span>
+        <span>{{product.composition}}, {{product.sauces}}</span>
+        <span>{{product.price}}</span>
+    </div>
+</div>
