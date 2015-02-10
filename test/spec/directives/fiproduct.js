@@ -9,11 +9,10 @@ describe('The fiproduct directive', function () {
   beforeEach(module('views/directives/fiproduct.html'));
 
   var element,
-    scope,
+    $scope,
     product;
 
   beforeEach(inject(function ($rootScope, $compile) {
-    scope = $rootScope.$new();
     product = {
       'id': '1',
       'categoryId': '1',
@@ -31,14 +30,17 @@ describe('The fiproduct directive', function () {
       'price': 2.0
     };
     element = angular.element('<fiproduct product=product></fiproduct>');
-    element = $compile(element)(scope);
+    $compile(element)($rootScope.$new());
+    $rootScope.$apply(function(){
+      $rootScope.product = product;
+    });
+    $rootScope.$digest();
+
+    $scope = element.isolateScope();
   }));
 
   it('should print out a sandwiches name, ingredients, sauces and price', inject(function () {
-    scope.$apply(function(){
-      scope.product = product;
-    });
-    expect(element.text()).toBe('Club cheese | [\"gouda cheese\",\"salad\",\"tomatoes\",\"egg\"] | [\"mayonaise\"] | 2');
+    expect($scope.ingredients).toBe('gouda cheese, salad, tomatoes, egg, mayonaise');
   }));
 
 });
