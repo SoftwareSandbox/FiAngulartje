@@ -9,7 +9,6 @@ body {
 .container {
 }
 
-
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
@@ -81,5 +80,14 @@ body {
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .size150percent {
+    font-size: 150%;
   }
 }
