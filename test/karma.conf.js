@@ -56,7 +56,8 @@ module.exports = function(config) {
     plugins: [
       'karma-phantomjs-launcher',
       'karma-jasmine',
-      'karma-ng-html2js-preprocessor'
+      'karma-ng-html2js-preprocessor',
+      'karma-htmlfile-reporter'
     ],
 
     // Continuous Integration mode
@@ -83,7 +84,13 @@ module.exports = function(config) {
 
     ngHtml2JsPreprocessor: {
       // strip this from the file path, so we can load our beforeEach modules looking like they would normally
-      stripPrefix: 'app/',
+      stripPrefix: 'app/'
+    },
+
+    reporters: ['progress', 'html'],
+
+    htmlReporter: {
+      outputFile: 'tests/units.html'
     }
 
   });

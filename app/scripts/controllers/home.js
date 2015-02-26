@@ -8,10 +8,5 @@
  * Controller of the fiAngulartjeApp
  */
 angular.module('fiAngulartjeApp')
-  .controller('HomeCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+  .controller('HomeCtrl', ['$scope',  function ($scope) {
+  }]);

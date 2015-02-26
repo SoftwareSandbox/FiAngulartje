@@ -1,0 +1,8 @@
+<ul>
+  <li ng-repeat="openinghour in openinghours">
+    <data itemprop="openingHours" datedata="{{microdata(openinghour)}}">
+      <span class="day">{{translateDay( openinghour.day)}}</span>:
+      <span class="hours">{{formatHours(openinghour.hours)}}</span>
+    </data>
+  </li>
+</ul>
