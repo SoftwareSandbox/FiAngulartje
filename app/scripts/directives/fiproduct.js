@@ -12,7 +12,7 @@ angular.module('fiAngulartjeApp')
       templateUrl: 'views/directives/fiproduct.html',
       restrict: 'E',
       scope: {
-      	product: '=product'
+      	product: '@product'
       },
       controller: function($scope) {
       	var ingredientsarray = $scope.product.composition.concat($scope.product.sauces);
