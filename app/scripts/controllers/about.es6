@@ -8,7 +8,7 @@
  * Controller of the fiAngulartjeApp
  */
 angular.module('fiAngulartjeApp')
-  .controller('AboutCtrl', function ($scope) {
+  .controller('AboutCtrl', ($scope)=> {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

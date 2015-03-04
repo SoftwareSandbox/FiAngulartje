@@ -9,7 +9,7 @@
  */
 
 angular.module('fiAngulartjeApp')
-  .service('Openinghours', ['$resource','Fiazard', function ($resource, Fiazard) {
+  .service('Openinghours', ['$resource','Fiazard',  ($resource, Fiazard) => {
     // AngularJS will instantiate a singleton by calling "new" on this function
-    return $resource(Fiazard.baseurl + 'api/v1/openinghours/',{});
+    return $resource(`${Fiazard.baseurl}api/v1/openinghours/`,{});
   }]);

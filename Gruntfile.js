@@ -37,7 +37,7 @@ module.exports = function (grunt) {
     port: 8080,
     https: false,
     rewrite: {
-      '^/api' : ''
+      '^/api': ''
     }
   };
   var proxySnippet = require('grunt-connect-proxy/lib/utils').proxyRequest;
@@ -61,9 +61,20 @@ module.exports = function (grunt) {
           livereload: '<%= connect.options.livereload %>'
         }
       },
+      babel: {
+        files: ['<%= yeoman.app %>/scripts/{,*/}*.es6'],
+        tasks: ['newer:babel:all'],
+        options: {
+          livereload: '<%= connect.options.livereload %>'
+        }
+      },
       jsTest: {
         files: ['test/spec/{,*/}*.js'],
         tasks: ['newer:jshint:test', 'karma']
+      },
+      babelTest:{
+        files: ['test/spec/{,*/}*.es6'],
+        tasks: ['newer:babel:tests']
       },
       styles: {
         files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
@@ -84,6 +95,30 @@ module.exports = function (grunt) {
       }
     },
 
+    babel: {
+      options: {
+        sourceMap: false
+      },
+      all: {
+        files: [{
+          expand: true,
+          cwd: '<%= yeoman.app %>/scripts/',
+          src: ['{,*/}*.es6'],
+          dest: '<%= yeoman.app %>/scripts/',
+          ext: '.js'
+        }]
+      },
+      tests: {
+        files: [{
+          expand: true,
+          cwd: 'test/spec',
+          src: ['{,*/}*.es6'],
+          dest: 'test/spec/',
+          ext: '.js'
+        }]
+      }
+    },
+
     // The actual grunt server settings
     connect: {
       options: {
@@ -93,7 +128,7 @@ module.exports = function (grunt) {
         livereload: 35729
       },
       livereload: {
-        proxies: [ proxyForStubby ],
+        proxies: [proxyForStubby],
         options: {
           open: true,
           middleware: function (connect) {
@@ -125,7 +160,7 @@ module.exports = function (grunt) {
         }
       },
       test: {
-        proxies: [ proxyForStubby ],
+        proxies: [proxyForStubby],
         options: {
           port: 9001,
           middleware: function (connect) {
@@ -149,19 +184,19 @@ module.exports = function (grunt) {
         }
       },
       integrate: {
-        proxies: [proxyForDropwizard ],
+        proxies: [proxyForDropwizard],
         options: {
           open: true,
           base: '<%= yeoman.dist %>',
           middleware: function (connect, options) {
-             return [
-                // Include the proxy first
-                proxySnippet,
-                // Serve static files.
-                connect.static(String(options.base)),
-                // Make empty directories browsable.
-                connect.directory(String(options.base))
-             ];
+            return [
+              // Include the proxy first
+              proxySnippet,
+              // Serve static files.
+              connect.static(String(options.base)),
+              // Make empty directories browsable.
+              connect.directory(String(options.base))
+            ];
           }
         }
       }
@@ -170,7 +205,7 @@ module.exports = function (grunt) {
     stubby: {
       stubsServer: {
         files: [{
-          src: [ 'stubs/*.{json,yaml,js}' ]
+          src: ['stubs/*.{json,yaml,js}']
         }],
         options: {
           stubs: 8090,
@@ -211,7 +246,17 @@ module.exports = function (grunt) {
           ]
         }]
       },
-      server: '.tmp'
+      server: '.tmp',
+      generatedJs: {
+        files: [{
+          src: ['<%= yeoman.app %>/scripts/{,*/}*.js']
+        }]
+      },
+      generatedTestJs: {
+        files: [{
+          src: ['test/spec/{,*/}*.js']
+        }]
+      }
     },
 
     // Add vendor prefixed styles
@@ -233,7 +278,7 @@ module.exports = function (grunt) {
     wiredep: {
       app: {
         src: ['<%= yeoman.app %>/index.html'],
-        ignorePath:  /\.\.\//
+        ignorePath: /\.\.\//
       }
     },
 
@@ -273,7 +318,7 @@ module.exports = function (grunt) {
       html: ['<%= yeoman.dist %>/{,*/}*.html'],
       css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
       options: {
-        assetsDirs: ['<%= yeoman.dist %>','<%= yeoman.dist %>/images']
+        assetsDirs: ['<%= yeoman.dist %>', '<%= yeoman.dist %>/images']
       }
     },
 
@@ -434,13 +479,15 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'clean:server',
+      'babel',
       'wiredep',
       'configureProxies:livereload',
       'concurrent:server',
       'autoprefixer',
       'stubby',
       'connect:livereload',
-      'watch'
+      'watch',
+      'clean:generatedJs'
     ]);
   });
 
@@ -451,14 +498,19 @@ module.exports = function (grunt) {
 
   grunt.registerTask('test', [
     'clean:server',
+    'babel:all',
+    'babel:tests',
     'concurrent:test',
     'autoprefixer',
     'connect:test',
-    'karma'
+    'karma',
+    'clean:generatedJs',
+    'clean:generatedTestJs'
   ]);
 
   grunt.registerTask('build', [
     'clean:dist',
+    'babel',
     'wiredep',
     'useminPrepare',
     'concurrent:dist',
@@ -471,7 +523,8 @@ module.exports = function (grunt) {
     'uglify',
     'filerev',
     'usemin',
-    'htmlmin'
+    'htmlmin',
+    'clean:generatedJs'
   ]);
 
   grunt.registerTask('default', [

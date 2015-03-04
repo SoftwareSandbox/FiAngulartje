@@ -1,19 +1,21 @@
 'use strict';
 
-describe('Controller: MenuCtrl', function () {
+describe('Controller: MenuCtrl', () => {
 
   // load the controller's module
   beforeEach(module('fiAngulartjeApp'));
 
-  var MenuCtrl,
-    scope, 
+  let MenuCtrl,
+    scope,
     categories;
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller, $rootScope) {
+  beforeEach(inject(($controller, $rootScope) => {
     scope = $rootScope.$new();
     categories = {
-      query: function(){ return [{'id':'1'},{'id':'2'}]; }
+      query: () => {
+        return [{'id': '1'}, {'id': '2'}];
+      }
     };
     MenuCtrl = $controller('MenuCtrl', {
       $scope: scope,
@@ -21,9 +23,9 @@ describe('Controller: MenuCtrl', function () {
     });
   }));
 
-  it('should get a list of categories to put on the scope', function () {
+  it('should get a list of categories to put on the scope', () => {
     expect(scope.categories.length).toBe(2);
-    expect(scope.categories[0]).toEqual({'id' : '1'});
-    expect(scope.categories[1]).toEqual({'id' : '2'});
+    expect(scope.categories[0]).toEqual({'id': '1'});
+    expect(scope.categories[1]).toEqual({'id': '2'});
   });
 });

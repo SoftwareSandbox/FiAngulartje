@@ -8,9 +8,9 @@
  * Service in the fiAngulartjeApp.
  */
 angular.module('fiAngulartjeApp')
-  .service('Products', ['$resource','Fiazard', function ($resource, Fiazard) {
+  .service('Products', ['$resource','Fiazard', ($resource, Fiazard) => {
     // AngularJS will instantiate a singleton by calling "new" on this function
-    return $resource(Fiazard.baseurl + 'api/v1/products/:productId',
+    return $resource( `${Fiazard.baseurl}api/v1/products/:productId`,
         {}, // defaults
         // actions
         { byCategory: {

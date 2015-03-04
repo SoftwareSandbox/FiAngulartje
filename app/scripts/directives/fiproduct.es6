@@ -7,7 +7,7 @@
  * # FiProduct
  */
 angular.module('fiAngulartjeApp')
-  .directive('fiproduct', function () {
+  .directive('fiproduct',  () => {
     return {
       templateUrl: 'views/directives/fiproduct.html',
       restrict: 'E',
@@ -15,9 +15,9 @@ angular.module('fiAngulartjeApp')
       	product: '=product'
       },
       controller: function($scope) {
-      	var ingredientsarray = $scope.product.composition.concat($scope.product.sauces);
+      	let ingredientsarray = $scope.product.composition.concat($scope.product.sauces);
       	$scope.ingredients = ingredientsarray.join(', ');
-      	$scope.price = '€ ' + $scope.product.price;
+      	$scope.price = `€  ${$scope.product.price}`;
       }
     };
   });
