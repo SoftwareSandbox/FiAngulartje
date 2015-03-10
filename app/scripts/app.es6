@@ -15,9 +15,10 @@ angular
     'ngResource',
     'ui.router',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ngDialog'
   ])
-  .config( ($stateProvider, $urlRouterProvider) => {
+  .config(($stateProvider, $urlRouterProvider) => {
     $urlRouterProvider.otherwise('/');
     $stateProvider
       .state('home', {
@@ -40,9 +41,19 @@ angular
       //   templateUrl: 'views/products.html',
       //   controller: 'ProductsCtrl'
       // })
-      .state('products',{
+      .state('products', {
         url: '/products/category/:categoryId',
         templateUrl: 'views/products.html',
         controller: 'ProductsCtrl'
+      })
+      .state('shoppingCart', {
+        url: '/shoppingCart',
+        templateUrl: 'views/shoppingCart.html',
+        controller: 'ShoppingCartCtrl',
+        onEnter: ['$state', 'ShoppingCart', ($state, ShoppingCart)=> {
+          if (ShoppingCart.isEmpty()) {
+            $state.go('home');
+          }
+        }]
       });
   });
