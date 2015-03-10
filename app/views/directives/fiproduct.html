@@ -1,15 +1,19 @@
 <!--{{product.name}} | {{product.composition}} | {{product.sauces}} | {{product.price}}-->
 <div class="media">
-    <a ng-href="/products/{{product.id}}" class="col-md-1">
-        <img class="media-object" src="/images/250px-Sandvich.png" style="width:50px;height:50px">
-    </a>
-    <div class="col-md-6">
-        <ul>
-	        <li><span class="size150percent">{{product.name}}</span></li>
-	        <li><span>{{ingredients}}</span></li>
-        </ul>
-    </div>
-    <div class="col-md-2">
-        <span class="size150percent">{{price}}</span>
-    </div>
+  <a ng-href="/products/{{product.id}}" class="col-md-1">
+    <img class="media-object" src="/images/250px-Sandvich.png" style="width:50px;height:50px">
+  </a>
+
+  <div class="col-md-6">
+    <ul>
+      <li><span class="size150percent">{{product.name}}</span></li>
+      <li><span>{{ingredients}}</span></li>
+    </ul>
+  </div>
+  <div class="col-md-2">
+    <span class="size150percent">{{price}}</span>
+  </div>
+  <div class="glyphicon-button">
+    <span class="glyphicon glyphicon-plus-sign size150percent" ng-click="addToCart()"></span>
+  </div>
 </div>

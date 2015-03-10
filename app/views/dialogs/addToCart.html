@@ -1,0 +1,19 @@
+<div class="size150percent">{{product.name}}</div>
+<br/>
+<table class="table">
+  <tr>
+    <th>Price</th>
+    <th>Quantity</th>
+    <th>Remark</th>
+    <th>Total</th>
+  </tr>
+  <tr>
+    <td>€ {{product.price}}</td>
+    <td><input type="number" ng-model="quantity" class="col-xs-10"/></td>
+    <td><input type="text" ng-model="remark"/></td>
+    <td>€ {{product.price * quantity}}</td>
+  </tr>
+</table>
+<div style="width:100%; text-align: right">
+  <button ng-click=" add()">Add</button>
+</div>

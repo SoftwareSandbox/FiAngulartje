@@ -63,7 +63,7 @@ module.exports = function (grunt) {
       },
       babel: {
         files: ['<%= yeoman.app %>/scripts/{,*/}*.es6'],
-        tasks: ['newer:babel:all'],
+        tasks: ['newer:babel:prod'],
         options: {
           livereload: '<%= connect.options.livereload %>'
         }
@@ -99,7 +99,7 @@ module.exports = function (grunt) {
       options: {
         sourceMap: false
       },
-      all: {
+      prod: {
         files: [{
           expand: true,
           cwd: '<%= yeoman.app %>/scripts/',
@@ -479,7 +479,7 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'clean:server',
-      'babel',
+      'babel:prod',
       'wiredep',
       'configureProxies:livereload',
       'concurrent:server',
@@ -498,7 +498,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('test', [
     'clean:server',
-    'babel:all',
+    'babel:prod',
     'babel:tests',
     'concurrent:test',
     'autoprefixer',
@@ -510,7 +510,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
-    'babel',
+    'babel:prod',
     'wiredep',
     'useminPrepare',
     'concurrent:dist',

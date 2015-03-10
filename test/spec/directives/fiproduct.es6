@@ -8,6 +8,19 @@ describe('The fiproduct directive', () => {
   // load the directives template as js via ng-html2js
   beforeEach(module('views/directives/fiproduct.html'));
 
+  let ngDialogArgument = null;
+  let ngDialogMock = {
+    open: (arg) => {
+      ngDialogArgument = arg;
+    }
+  }
+  //mock out ngDialog service
+  beforeEach(() => {
+    module(($provide) => {
+      $provide.value('ngDialog', ngDialogMock);
+    });
+  });
+
   let scope;
 
   beforeEach(inject(($rootScope, $compile) => {
@@ -40,6 +53,15 @@ describe('The fiproduct directive', () => {
 
   it('should print out a sandwiches name, ingredients, sauces and price', inject(() => {
     expect(scope.ingredients).toBe('gouda cheese, salad, tomatoes, egg, mayonaise');
+    expect(scope.price).toEqual('€ 2');
   }));
 
+
+  it('Can add to cart', ()=> {
+    scope.addToCart();
+
+    expect(ngDialogArgument.template).toEqual('views/dialogs/addToCart.html');
+    expect(ngDialogArgument.scope).toEqual(scope);
+    expect(ngDialogArgument.controller).toEqual('AddToCartCtrl');
+  });
 });
