@@ -47,7 +47,7 @@ describe('Service: shoppingCart', () => {
 
   it('Can checkout', ()=> {
     ShoppingCart.checkout();
-    
+
     expect(state.go).toHaveBeenCalledWith('orderComplete');
   });
 });

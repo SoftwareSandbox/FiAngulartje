@@ -22,10 +22,7 @@ angular.module('fiAngulartjeApp')
     }
 
     function totalPrice() {
-      return items.reduce(function (total, current) {
-        let currentItemPrice = (current.quantity * current.product.price);
-        return total + currentItemPrice;
-      }, 0);
+      return items.reduce((total, current) => total + (current.quantity * current.product.price), 0);
     }
 
     function removeItem(item) {
