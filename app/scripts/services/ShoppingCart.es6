@@ -8,8 +8,9 @@
  * Service in the fiAngulartjeApp.
  */
 angular.module('fiAngulartjeApp')
-  .service('ShoppingCart', [() => {
-    let items = [];
+  .service('ShoppingCart', ['$localStorage', ($localStorage) => {
+    let storage = $localStorage.$default({items: []});
+    let items = storage.items;
 
     function isEmpty() {
       return items.length === 0;

@@ -16,7 +16,8 @@ angular
     'ui.router',
     'ngSanitize',
     'ngTouch',
-    'ngDialog'
+    'ngDialog',
+    'ngStorage'
   ])
   .config(($stateProvider, $urlRouterProvider) => {
     $urlRouterProvider.otherwise('/');
@@ -36,11 +37,6 @@ angular
         templateUrl: 'views/menu.html',
         controller: 'MenuCtrl'
       })
-      // .state('products',{
-      //   url: '/products',
-      //   templateUrl: 'views/products.html',
-      //   controller: 'ProductsCtrl'
-      // })
       .state('products', {
         url: '/products/category/:categoryId',
         templateUrl: 'views/products.html',
