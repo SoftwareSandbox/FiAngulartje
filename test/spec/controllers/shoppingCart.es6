@@ -11,25 +11,29 @@ describe('Controller: ShoppingCartCtrl', () => {
 
   // Initialize the controller and a mock scope
   beforeEach(inject(($controller, $rootScope) => {
-    scope = $rootScope.$new();
+      scope = $rootScope.$new();
 
-    shoppingCart = {
-      removedItem: null,
-      items: () => [{a: 1}, {a: 2}],
-      totalPrice: () => 10,
-      removeItem: (item) => {
-        shoppingCart.removedItem = item;
-      }
-    };
+      shoppingCart = {
+        removedItem: null,
+        items: [{a: 1}, {a: 2}],
+        totalPrice: () => 10,
+        removeItem: (item) => {
+          shoppingCart.removedItem = item;
+        },
+        checkout: () => {
+        }
+      };
 
-    ShoppingCartCtrl = $controller('ShoppingCartCtrl', {
-      $scope: scope,
-      ShoppingCart: shoppingCart
-    });
-  }));
+      ShoppingCartCtrl = $controller('ShoppingCartCtrl', {
+        $scope: scope,
+        ShoppingCart: shoppingCart
+      });
+    })
+  )
+  ;
 
   it('items and total get put on scope', ()=> {
-    expect(scope.items).toEqual(shoppingCart.items());
+    expect(scope.items).toEqual(shoppingCart.items);
     expect(scope.total).toBe(10);
   });
 
@@ -42,4 +46,5 @@ describe('Controller: ShoppingCartCtrl', () => {
     expect(scope.total).toBe(8);
   });
 
-});
+})
+;

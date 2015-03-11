@@ -8,8 +8,9 @@
  * Service in the fiAngulartjeApp.
  */
 angular.module('fiAngulartjeApp')
-  .service('ShoppingCart', ['$localStorage', ($localStorage) => {
-    let storage = $localStorage.$default({shoppingCart: []});
+  .service('ShoppingCart', ['$localStorage', '$state', ($localStorage, $state) => {
+
+    var storage = $localStorage.$default({shoppingCart: []});
     let items = storage.shoppingCart;
 
     function isEmpty() {
@@ -21,13 +22,10 @@ angular.module('fiAngulartjeApp')
     }
 
     function totalPrice() {
-      return items.reduce(function (previous, current) {
-        return previous + (current.quantity * current.product.price);
+      return items.reduce(function (total, current) {
+        let currentItemPrice = (current.quantity * current.product.price);
+        return total + currentItemPrice;
       }, 0);
-    }
-
-    function getItems() {
-      return items;
     }
 
     function removeItem(item) {
@@ -36,12 +34,23 @@ angular.module('fiAngulartjeApp')
       items.splice(index, 1);
     }
 
+    function checkout() {
+      console.log('checkout');
+      $state.go('orderComplete');
+    }
+
+    function clearItems() {
+      storage.shoppingCart = [];
+      items = storage.shoppingCart;
+    }
+
     return {
       isEmpty: isEmpty,
-      items: getItems,
+      items: items,
       addItem: addItem,
       totalPrice: totalPrice,
-      removeItem: removeItem
+      removeItem: removeItem,
+      checkout: checkout,
+      clearItems: clearItems
     };
-  }])
-;
+  }]);

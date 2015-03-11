@@ -51,5 +51,10 @@ angular
             $state.go('home');
           }
         }]
+      })
+      .state('orderComplete', {
+        url: '/orderComplete',
+        templateUrl: 'views/orderComplete.html',
+        controller: 'OrderCompleteCtrl'
       });
   });
