@@ -1,29 +1,5 @@
-<table class="table">
-  <tr>
-    <th>Name</th>
-    <th>Quantity</th>
-    <th>Remark</th>
-    <th>Cost</th>
-    <th>Total</th>
-    <th></th>
-  </tr>
-  <tr ng-repeat="item in items">
-    <td>{{item.product.name}}</td>
-    <td class="col-sm-2"><input type="number" min="0" max="20" ng-model="item.quantity" class="col-xs-9"/></td>
-    <td><input type="text" ng-model="item.remark"/></td>
-    <td>€ {{item.product.price}}</td>
-    <td>€ {{item.product.price * item.quantity}}</td>
-    <td>
-      <div class="glyphicon-button">
-        <span class="glyphicon glyphicon-minus-sign size150percent" ng-click="remove(item)"></span>
-      </div>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="4">
-      <span class="h3">Total</span>
-    </td>
-    <td class="h3">€ {{total}}</td>
-  </tr>
-</table>
+<shoppingcart readonly="false"></shoppingcart>
 
+<div style="width:100%; text-align: right">
+  <button class="btn-lg" ng-click="checkout()">Place my order</button>
+</div>

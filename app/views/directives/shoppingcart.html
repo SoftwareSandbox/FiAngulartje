@@ -1,0 +1,35 @@
+<table class="table">
+  <tr>
+    <th>Name</th>
+    <th>Quantity</th>
+    <th>Remark</th>
+    <th>Cost</th>
+    <th>Total</th>
+    <th ng-hide="readonly"></th>
+  </tr>
+  <tr ng-repeat="item in items">
+    <td>{{item.product.name}}</td>
+    <td class="col-sm-2">
+      <input type="number" min="1" max="20" ng-model="item.quantity" class="col-xs-9" ng-hide="readonly"/>
+      <span ng-show="readonly">{{item.quantity}}</span>
+    </td>
+    <td>
+      <input type="text" ng-model="item.remark" ng-hide="readonly"/>
+      <span ng-show="readonly">{{item.remark}}</span>
+    </td>
+    <td>€ {{item.product.price}}</td>
+    <td>€ {{item.product.price * item.quantity}}</td>
+    <td ng-hide="readonly">
+      <div class="glyphicon-button">
+        <span class="glyphicon glyphicon-minus-sign size150percent" ng-click="remove(item)"></span>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <span class="h3">Total</span>
+    </td>
+    <td class="h3" ng-hide="readonly">€ {{total()}}</td>
+    <td class="h3" ng-show="readonly">€ {{totalStatic}}</td>
+  </tr>
+</table>
