@@ -8,11 +8,7 @@
  * Controller of the fiAngulartjeApp
  */
 angular.module('fiAngulartjeApp')
-  .controller('OrderCompleteCtrl', ['$scope', 'ShoppingCart', '$interval', '$state', ($scope, ShoppingCart, $interval, $state) => {
-
-    $scope.items = ShoppingCart.items;
-    ShoppingCart.clearItems();
-
+  .controller('OrderCompleteCtrl', ['$scope', '$interval', '$state', ($scope, $interval, $state) => {
     $scope.remaining = 5;
 
     let stop = $interval(()=> {

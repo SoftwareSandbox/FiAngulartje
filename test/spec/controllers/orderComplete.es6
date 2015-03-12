@@ -7,16 +7,10 @@ describe('Controller: OrderCompleteCtrl', () => {
 
   let OrderCompleteCtrl,
     scope,
-    shoppingCart,
     interval,
     state,
     intervalStop;
 
-  shoppingCart = {
-    items: ['a', 'b'],
-    clearItems: ()=> {
-    }
-  }
 
   // Initialize the controller and a mock scope
   beforeEach(inject(($controller, $rootScope, _$state_) => {
@@ -24,7 +18,6 @@ describe('Controller: OrderCompleteCtrl', () => {
     state = _$state_;
 
     spyOn(state, 'go').and.callThrough();
-    spyOn(shoppingCart, 'clearItems').and.callThrough();
     interval = jasmine.createSpy('$interval', {
       cancel: ()=> {
       }
@@ -33,7 +26,6 @@ describe('Controller: OrderCompleteCtrl', () => {
 
     OrderCompleteCtrl = $controller('OrderCompleteCtrl', {
       $scope: scope,
-      ShoppingCart: shoppingCart,
       $interval: interval,
       $state: state
     });
@@ -41,11 +33,8 @@ describe('Controller: OrderCompleteCtrl', () => {
     spyOn(scope, 'tick').and.callThrough();
   }));
 
-  it('Items and remaining count get put on scope, shoppingcart is cleared and interval is started', () => {
-    expect(scope.items.length).toBe(2);
+  it('Remaining count get put on scope', () => {
     expect(scope.remaining).toBe(5);
-
-    expect(shoppingCart.clearItems).toHaveBeenCalled();
   });
 
   it('Countdown gets started correctly', ()=> {

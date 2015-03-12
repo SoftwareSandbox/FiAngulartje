@@ -12,6 +12,7 @@ describe('Controller: ShoppingCartCtrl', () => {
   // Initialize the controller and a mock scope
   beforeEach(inject(($controller, $rootScope) => {
       scope = $rootScope.$new();
+      scope.readonly = false;
 
       shoppingCart = {
         removedItem: null,
@@ -21,6 +22,8 @@ describe('Controller: ShoppingCartCtrl', () => {
           shoppingCart.removedItem = item;
         },
         checkout: () => {
+        },
+        clearItems: () => {
         }
       };
 
@@ -29,12 +32,12 @@ describe('Controller: ShoppingCartCtrl', () => {
         ShoppingCart: shoppingCart
       });
     })
-  )
-  ;
+  );
 
   it('items and total get put on scope', ()=> {
     expect(scope.items).toEqual(shoppingCart.items);
-    expect(scope.total).toBe(10);
+    expect(scope.total()).toBe(10);
+    expect(scope.totalStatic).toBe(10);
   });
 
   it('remove delegates to service and recalculates price', ()=> {
@@ -43,8 +46,31 @@ describe('Controller: ShoppingCartCtrl', () => {
     scope.remove(item);
 
     expect(shoppingCart.removedItem).toEqual(item);
-    expect(scope.total).toBe(8);
+    expect(scope.total()).toBe(8);
   });
+
+
+  describe('Readonly true', () => {
+
+    beforeEach(inject(($controller, $rootScope) => {
+      scope = $rootScope.$new();
+      scope.readonly = true;
+
+      spyOn(shoppingCart, 'clearItems').and.callThrough();
+
+      $controller('ShoppingCartCtrl', {
+        $scope: scope,
+        ShoppingCart: shoppingCart
+      });
+    }));
+
+    it('when readonly is true, shopping cart gets cleared', ()=> {
+
+      expect(shoppingCart.clearItems).toHaveBeenCalled();
+
+    })
+  })
+
 
 })
 ;

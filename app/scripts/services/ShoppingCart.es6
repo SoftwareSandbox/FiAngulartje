@@ -32,7 +32,6 @@ angular.module('fiAngulartjeApp')
     }
 
     function checkout() {
-      console.log('checkout');
       $state.go('orderComplete');
     }
 
