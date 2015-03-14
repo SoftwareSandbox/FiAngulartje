@@ -7,4 +7,7 @@ before_script:
   - 'npm install -g bower grunt-cli'
   - 'bower install'
 notifications:
-  slack: fiangulartje:AccRWcnglPImsSDKzKYauQQj
+  slack:
+    rooms:
+      - softwaresandbox:wSLhmu5v2ZHNq0PpgTrFBbSe#fiangulartje
+      - fiangulartje:AccRWcnglPImsSDKzKYauQQj#general
