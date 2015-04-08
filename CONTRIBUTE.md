@@ -1,12 +1,20 @@
 How to contribute
 =================
 
-##Fork this repo
+##Clone this repo
 
-Fork it baby!
+Clone this repo (using an url of your choosing), e.g. `git@github.com:Sch3lp/FiAngulartje.git`, and start coding.
+
 
 ##Never forget...
 
+* To work in small commits.
+* To branch early and branch often.
+
+##We experimented with pull requests
+But decided we wanted to prioritize learning the tech frameworks and coding etc. then to learn Git.
+
+Here are our *Never forgets* for working with pull-requests:
 * To sync with master before starting on a new issue/feature. (with `git pull --rebase upstream master` see this [cool article](http://kentnguyen.com/development/visualized-git-practices-for-team/) on the why)
 * To rebase your commits into one before submitting pull requests.
 * To have fun!
