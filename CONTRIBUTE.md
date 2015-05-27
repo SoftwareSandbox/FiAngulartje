@@ -5,7 +5,6 @@ How to contribute
 
 Fork [this repo](https://github.com/SoftwareSandbox/FiAngulartje/) into your own account, e.g. `git@github.com:MyGithubAccount/FiAngulartje.git` and clone your forked repo locally:  
  ```
- git init
  git clone https://github.com/MyGithubAccount/FiAngulartje
  git remote add swsb https://github.com/SoftwareSandbox/FiAngulartje
  ```
