@@ -1,8 +1,11 @@
 {
   "name": "fiangulartje",
   "version": "0.0.0",
+  "dependencies": {
+    "bower": "^1.4.1",
+    "grunt": "^0.4.5"
+  },
   "devDependencies": {
-    "grunt": "^0.4.5",
     "grunt-autoprefixer": "^0.7.3",
     "grunt-concurrent": "^0.5.0",
     "grunt-connect-proxy": "^0.2.0",
@@ -21,7 +24,7 @@
     "grunt-google-cdn": "^0.4.0",
     "grunt-karma": "^0.9.0",
     "grunt-newer": "^0.7.0",
-    "grunt-ng-annotate": "^0.4.0",
+    "grunt-ng-annotate": "^0.10.0",
     "grunt-stubby": "0.1.4",
     "grunt-svgmin": "^0.4.0",
     "grunt-usemin": "^2.1.1",
@@ -45,7 +48,7 @@
   },
   "scripts": {
     "test": "grunt test",
-    "start": "grunt serve --force",
-    "postinstall": "bower cache clean && bower install"
+    "start": "grunt serve:deploy",
+    "postinstall": "bower cache clean && bower install && grunt build"
   }
 }
