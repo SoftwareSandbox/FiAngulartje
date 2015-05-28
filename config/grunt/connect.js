@@ -1,7 +1,7 @@
 'use strict';
 
 var proxies = require('./proxies'),
-    appConfig = require('./appConfig'),
+    appConfig = require('./appconfig'),
     proxySnippet = require('grunt-connect-proxy/lib/utils').proxyRequest;
 
 // The actual grunt server settings

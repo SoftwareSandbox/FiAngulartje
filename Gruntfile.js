@@ -8,7 +8,7 @@
 // 'test/spec/**/*.js'
 
 module.exports = function (grunt) {
-    var appConfig = require('./config/grunt/appConfig'),
+    var appConfig = require('./config/grunt/appconfig'),
         watch = require('./config/grunt/watch'),
         babel = require('./config/grunt/babel'),
         connect = require('./config/grunt/connect'),
