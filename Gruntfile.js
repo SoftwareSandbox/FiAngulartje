@@ -8,6 +8,8 @@
 // 'test/spec/**/*.js'
 
 module.exports = function (grunt) {
+  var proxies = require('./config/grunt/proxies');
+  var appConfig = require('./config/grunt/appConfig');
 
   // Load grunt tasks automatically
   require('load-grunt-tasks')(grunt);
@@ -15,31 +17,13 @@ module.exports = function (grunt) {
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
 
-  // Configurable paths for the application
+
   var appConfig = {
     app: require('./bower.json').appPath || 'app',
     dist: 'dist'
   };
 
-  /* Proxy configuration so that requests of our Angular Services that go to http://localhost:9000/api/...  get redirected to the configured proxy.
-   * When we use stubby to mock out our back-end it will serve our stubbed api at localhost:8090/api, and
-   * when we want to run vs our actual back-end, dropwizard will serve at localhost:8080/api.
-   */
-  var proxyForStubby = {
-    context: '/api',
-    host: 'localhost',
-    port: 8090,
-    https: false
-  };
-  var proxyForDropwizard = {
-    context: '/api',
-    host: 'localhost',
-    port: 8080,
-    https: false,
-    rewrite: {
-      '^/api': ''
-    }
-  };
+
   var proxySnippet = require('grunt-connect-proxy/lib/utils').proxyRequest;
 
   // Define the configuration for all the tasks
@@ -128,7 +112,7 @@ module.exports = function (grunt) {
         livereload: 35729
       },
       livereload: {
-        proxies: [proxyForStubby],
+        proxies: [proxies.proxyForStubby],
         options: {
           open: true,
           middleware: function (connect) {
@@ -160,7 +144,7 @@ module.exports = function (grunt) {
         }
       },
       test: {
-        proxies: [proxyForStubby],
+        proxies: [proxies.proxyForStubby],
         options: {
           port: 9001,
           middleware: function (connect) {
@@ -184,7 +168,7 @@ module.exports = function (grunt) {
         }
       },
       integrate: {
-        proxies: [proxyForDropwizard],
+        proxies: [proxies.proxyForDropwizard],
         options: {
           open: true,
           base: '<%= yeoman.dist %>',
