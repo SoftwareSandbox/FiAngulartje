@@ -44,6 +44,12 @@ module.exports = {
             }
         }
     },
+    deploy: {
+        options: {
+            port: 80,
+            hostname: '0.0.0.0'
+        }
+    },
     test: {
         proxies: [proxies.proxyForStubby],
         options: {

@@ -74,6 +74,9 @@ module.exports = function (grunt) {
         if (target === 'integrate') {
             return grunt.task.run(['build', 'configureProxies:integrate', 'connect:integrate:keepalive']);
         }
+        if(target === 'deploy') {
+            return grunt.task.run(['configureProxies:deploy', 'connect:deploy:keepalive']);
+        }
 
         grunt.task.run([
             'clean:server',
