@@ -1,7 +1,6 @@
 {
   "name": "fiangulartje",
   "version": "0.0.0",
-  "dependencies": {},
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-autoprefixer": "^0.7.3",
@@ -46,6 +45,7 @@
   },
   "scripts": {
     "test": "grunt test",
+    "start": "grunt serve --force",
     "postinstall": "bower cache clean && bower install"
   }
 }
