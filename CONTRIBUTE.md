@@ -42,4 +42,4 @@ Fork [this repo](https://github.com/SoftwareSandbox/FiAngulartje/) into your own
 
 
 ##Suggestions
-You might want to install the [AngularJS](https://github.com/angular-ui/AngularJS-sublime-package) package if you're using SublimeText
+You might want to install the [AngularJS](https://github.com/angular-ui/AngularJS-sublime-package) package if you're using SublimeText.
