@@ -2,9 +2,9 @@
 
 /**
  * @ngdoc directive
- * @name fiAngulartjeApp.directive:openinghour
+ * @name fiAngulartjeApp.directive:shoppingcart
  * @description
- * # Openinghour
+ * # Shopping cart
  */
 
 angular.module('fiAngulartjeApp')
