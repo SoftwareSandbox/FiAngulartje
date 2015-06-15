@@ -32,7 +32,7 @@ describe('The shoppingcart directive', () => {
     totalPrice: () => 10,
     clearItems: ()=> {
     }
-  }
+  };
 
   //mock out ngDialog service
   beforeEach(() => {
@@ -45,7 +45,7 @@ describe('The shoppingcart directive', () => {
 
   let getCell = (table, row, col) => {
     return angular.element(angular.element(table.find('tr')[row]).find('td')[col]);
-  }
+  };
 
   describe('Readonly false', ()=> {
 

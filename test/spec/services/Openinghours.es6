@@ -22,8 +22,8 @@ describe('Service: Openinghours', () => {
       .expectGET(baseurl + 'api/v1/openinghours')
       .respond([
         {
-          "day": 1,
-          "hours": [{"from": "09:00", "until": "12:00"}, {"from": "12:30", "until": "17:00"}]
+          'day': 1,
+          'hours': [{'from': '09:00', 'until': '12:00'}, {'from': '12:30', 'until': '17:00'}]
         }]
     );
 

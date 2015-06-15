@@ -29,7 +29,7 @@ angular.module('fiAngulartjeApp')
           let dayAbbreviation = $scope.translateDay(openinghour.day).substr(0, 2);
           let formattedFirstHoursOfDay = $scope.formatHours(openinghour.hours.slice(0, 1));
           return `${dayAbbreviation} ${formattedFirstHoursOfDay}`;
-        }
+        };
 
         $scope.openinghours = Openinghours.query();
       }
