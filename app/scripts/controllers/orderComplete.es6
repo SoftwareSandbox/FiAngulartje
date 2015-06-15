@@ -22,5 +22,5 @@ angular.module('fiAngulartjeApp')
         $state.go('home');
         $interval.cancel(stop);
       }
-    }
+    };
   }]);

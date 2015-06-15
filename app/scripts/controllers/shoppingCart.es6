@@ -17,7 +17,7 @@ angular.module('fiAngulartjeApp')
 
     $scope.remove = (item) => {
       ShoppingCart.removeItem(item);
-    }
+    };
 
     $scope.checkout = () => {
       ShoppingCart.checkout();

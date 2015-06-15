@@ -25,7 +25,7 @@ angular.module('fiAngulartjeApp')
             scope: $scope,
             controller: 'AddToCartCtrl'
           });
-        }
+        };
       }
     };
   }]);
