@@ -10,7 +10,7 @@
 angular.module('fiAngulartjeApp')
   .directive('placeorder', [() => {
     return {
-      template: '<button />',
+      template: '<button data-ng-click="placeOrder()">Place Order</button>',
       restrict: 'E',
       controller: 'PlaceOrderCtrl',
       scope: {
