@@ -1,0 +1,15 @@
+[
+  {
+    "request": {
+      "url": "^/api/ordering/condiment$",
+      "method": "GET"
+    },
+    "response": {
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "file": "api/ordering/condiments.json"
+    }
+  }
+]
