@@ -2,9 +2,9 @@
 
 /**
  * @ngdoc service
- * @name fiAngulartjeApp.categories
+ * @name fiAngulartjeApp.placeorder
  * @description
- * # categories
+ * # placeorder
  * Service in the fiAngulartjeApp.
  */
 angular.module('fiAngulartjeApp')
