@@ -1,14 +1,14 @@
 <div class="randomizer" data-ng-controller="RandomizerCtrl as RandomizerCtrl">
   <div class="slot">
-    <span>{{RandomizerCtrl.composition.bun.name}}</span>
+    <span>{{RandomizerCtrl.composition.bun}}</span>
   </div>
   <div class="slot">
-    <span>{{RandomizerCtrl.composition.topping.name}}</span>
+    <span>{{RandomizerCtrl.composition.topping}}</span>
   </div>
   <div class="slot">
-    <span>{{RandomizerCtrl.composition.condiment.name}}</span>
+    <span>{{RandomizerCtrl.composition.condiment}}</span>
   </div>
   <div>
-    <button data-ng-click="RandomizerCtrl.randomize">Randomize</button>
+    <button data-ng-click="RandomizerCtrl.randomize()">Randomize</button>
   </div>
 </div>
