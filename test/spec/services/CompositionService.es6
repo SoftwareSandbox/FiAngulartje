@@ -17,7 +17,7 @@ describe('Service: compositionService', () => {
       bun: {name: 'Ciabatta', price: 999.67},
       toppings: [{name: 'Mozarella', price: 1}],
       condiments: [{name: 'Mosterd', price: 5}]
-    })
+    });
 
     let result = CompositionService.hasComposition();
 
@@ -41,11 +41,11 @@ describe('Service: compositionService', () => {
       bun: {name: 'Ciabatta', price: 999.67},
       toppings: [{name: 'Mozarella', price: 1}],
       condiments: [{name: 'Mosterd', price: 5}]
-    })
+    });
 
     let result = CompositionService.getPrice();
 
     expect(result).toEqual(1005.67);
-  })
+  });
 
 });

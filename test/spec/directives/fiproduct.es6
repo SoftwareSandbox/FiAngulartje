@@ -13,7 +13,7 @@ describe('The fiproduct directive', () => {
     open: (arg) => {
       ngDialogArgument = arg;
     }
-  }
+  };
   //mock out ngDialog service
   beforeEach(() => {
     module(($provide) => {

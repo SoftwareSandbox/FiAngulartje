@@ -21,7 +21,7 @@ describe('Controller: AddToCartCtrl', () => {
       addItem: function (product, quantity, remark) {
         this.product = product;
         this.quantity = quantity;
-        this.remark = remark
+        this.remark = remark;
       }
     };
 
@@ -29,7 +29,7 @@ describe('Controller: AddToCartCtrl', () => {
 
     scope.closeThisDialog = function () {
       closeThisDialogWasCalled = true;
-    }
+    };
 
     AddToCartCtrl = $controller('AddToCartCtrl', {
       $scope: scope,

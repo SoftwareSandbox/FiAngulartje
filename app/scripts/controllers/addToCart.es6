@@ -15,5 +15,5 @@ angular.module('fiAngulartjeApp')
     $scope.add = function () {
       ShoppingCart.addItem($scope.product, $scope.quantity, $scope.remark);
       $scope.closeThisDialog('ok');
-    }
+    };
   }]);

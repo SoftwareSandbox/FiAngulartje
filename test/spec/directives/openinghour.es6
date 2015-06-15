@@ -3,8 +3,8 @@
 describe('The openinghour directive', () => {
 
   let openinghours = [{
-    "day": 1,
-    "hours": [{"from": "09:00", "until": "12:00"}]
+    'day': 1,
+    'hours': [{'from': '09:00', 'until': '12:00'}]
   }];
 
   //mock out Openinghours service
@@ -15,7 +15,7 @@ describe('The openinghour directive', () => {
           query: () => {
             return openinghours;
           }
-        }
+        };
       }
     });
   }));
