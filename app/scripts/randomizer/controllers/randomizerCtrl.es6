@@ -1,5 +1,5 @@
 angular.module('randomizer')
-  .controller('RandomizerCtrl', [function() {
+  .controller('RandomizerCtrl', ['$scope', 'CompositionService', function($scope, CompositionService) {
     var ctrl = this;
 
     this.buns = ['gray', 'ciabatta'];
@@ -14,7 +14,18 @@ angular.module('randomizer')
         topping: getRandomValue(this.toppings),
         condiment: getRandomValue(this.condiments)
       };
+
+      CompositionService.setComposition(this.composition);
     };
+
+    $scope.$watch(
+      function() {
+        return CompositionService.getComposition()
+      },
+      function(newVal) {
+        ctrl.composition = newVal;
+      }
+    );
 
     function getRandomValue(values){
       var min = 0;
