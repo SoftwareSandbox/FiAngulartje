@@ -9,5 +9,5 @@ before_script:
 notifications:
   slack:
     rooms:
-      - softwaresandbox:wSLhmu5v2ZHNq0PpgTrFBbSe#fiangulartje
+      - softwaresandbox:QkwyOuEOYV5NHwwPCqDx8PkB
       - fiangulartje:AccRWcnglPImsSDKzKYauQQj#general
