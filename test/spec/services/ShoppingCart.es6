@@ -43,7 +43,7 @@ describe('Service: shoppingCart', () => {
     ShoppingCart.removeItem(ShoppingCart.items[0]);
 
     expect(ShoppingCart.items.length).toBe(1);
-  })
+  });
 
   it('Can checkout', ()=> {
     ShoppingCart.checkout();

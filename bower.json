@@ -18,11 +18,11 @@
   },
   "devDependencies": {
     "angular-mocks": "~1.3.0",
-    "angular-scenario": "~1.3.0"
+    "angular-scenario": "~1.3.0",
+    "mockito4js": "~1.2.0"
   },
   "resolutions": {
     "angular": "1.4.0"
-    
   },
   "appPath": "app"
 }
