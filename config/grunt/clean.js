@@ -15,12 +15,12 @@ module.exports = {
     server: '.tmp',
     generatedJs: {
         files: [{
-            src: ['<%= yeoman.app %>/scripts/{,*/}*.js']
+            src: ['<%= yeoman.app %>/scripts/**/*.js']
         }]
     },
     generatedTestJs: {
         files: [{
-            src: ['test/spec/{,*/}*.js']
+            src: ['test/spec/**/*.js']
         }]
     }
 };
