@@ -41,7 +41,7 @@ describe('Controller: ShoppingCartCtrl', () => {
   });
 
   it('remove delegates to service and recalculates price', ()=> {
-    shoppingCart['totalPrice'] = () => 8;
+    shoppingCart.totalPrice = () => 8;
     let item = {'a': 'b'};
     scope.remove(item);
 
@@ -68,8 +68,8 @@ describe('Controller: ShoppingCartCtrl', () => {
 
       expect(shoppingCart.clearItems).toHaveBeenCalled();
 
-    })
-  })
+    });
+  });
 
 
 })

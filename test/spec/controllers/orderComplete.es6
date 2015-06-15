@@ -58,5 +58,5 @@ describe('Controller: OrderCompleteCtrl', () => {
     scope.tick();
     expect(interval.cancel).toHaveBeenCalledWith(intervalStop);
     expect(state.go).toHaveBeenCalledWith('home');
-  })
+  });
 });

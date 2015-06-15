@@ -20,7 +20,8 @@ angular.module('fiAngulartjeApp')
     }
 
     function hasComposition() {
-      return composition != undefined;
+
+      return composition !== undefined;
     }
 
     function getPrice() {
