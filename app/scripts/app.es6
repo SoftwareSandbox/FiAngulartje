@@ -17,7 +17,8 @@ angular
     'ngSanitize',
     'ngTouch',
     'ngDialog',
-    'ngStorage'
+    'ngStorage',
+    'randomizer'
   ])
   .config(($stateProvider, $urlRouterProvider) => {
     $urlRouterProvider.otherwise('/');
@@ -58,3 +59,5 @@ angular
         controller: 'OrderCompleteCtrl'
       });
   });
+
+angular.module('randomizer', []);
