@@ -20,7 +20,7 @@ angular
     'ngStorage',
     'randomizer'
   ])
-  .config(($stateProvider, $urlRouterProvider) => {
+  .config(['$stateProvider', '$urlRouterProvider',($stateProvider, $urlRouterProvider) => {
     $urlRouterProvider.otherwise('/');
     $stateProvider
       .state('home', {
@@ -62,6 +62,6 @@ angular
         templateUrl: 'views/orderComplete.html',
         controller: 'OrderCompleteCtrl'
       });
-  });
+  }]);
 
 angular.module('randomizer', []);

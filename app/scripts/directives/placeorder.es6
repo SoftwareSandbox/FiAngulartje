@@ -8,7 +8,7 @@
  */
 
 angular.module('fiAngulartjeApp')
-  .directive('placeorder', [() => {
+  .directive('placeorder', () => {
     return {
       templateUrl: 'views/directives/placeorder.html',
       restrict: 'E',
@@ -17,4 +17,4 @@ angular.module('fiAngulartjeApp')
         readonly: '=readonly'
       }
     };
-  }]);
+  });
