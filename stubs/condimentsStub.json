@@ -11,5 +11,23 @@
       },
       "file": "api/ordering/condiments.json"
     }
+  },
+  {
+    "request": {
+      "url": "^/api/ordering/condiment/lock$",
+      "method": "POST"
+    },
+    "response": {
+      "status": 200
+    }
+  },
+  {
+    "request": {
+      "url": "^/api/ordering/condiment/unlock$",
+      "method": "POST"
+    },
+    "response": {
+      "status": 200
+    }
   }
 ]

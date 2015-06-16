@@ -1,4 +1,7 @@
-angular.module('randomizer').directive('slot', ['$timeout', function ($timeout) {
+angular.module('randomizer').directive('slot', ['$timeout', 'LockingService', function ($timeout, LockingService) {
+  const TYPE_CONDIMENTS = 'condiments';
+  const TYPE_TOPPINGS = 'toppings';
+  const TYPE_BUNS = 'buns';
   return {
     templateUrl: 'views/directives/slot.html',
     restrict: 'E',
@@ -6,7 +9,8 @@ angular.module('randomizer').directive('slot', ['$timeout', function ($timeout) 
     scope: {
       toUpdate: '=',
       items: '=',
-      delay: '='
+      delay: '=',
+      type: '@'
     },
     link: function (scope, element, attrs) {
       scope.locked = false;
@@ -27,6 +31,26 @@ angular.module('randomizer').directive('slot', ['$timeout', function ($timeout) 
           }, scope.delay);
         }
       });
+
+      scope.toggleLocked = function () {
+        if (scope.toUpdate.price !== undefined) {
+
+          let functionToCall = scope.locked ? 'lock' : 'unlock';
+          switch (scope.type) {
+            case TYPE_BUNS:
+              functionToCall += 'Bun';
+              break;
+            case TYPE_CONDIMENTS:
+              functionToCall += 'Condiment';
+              break;
+            case TYPE_TOPPINGS:
+              functionToCall += 'Topping';
+              break;
+          }
+
+          LockingService[functionToCall](scope.toUpdate);
+        }
+      };
     }
   };
 }]);

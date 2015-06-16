@@ -11,5 +11,23 @@
       },
       "file": "api/ordering/buns.json"
     }
+  },
+  {
+    "request": {
+      "url": "^/api/ordering/bun/lock$",
+      "method": "POST"
+    },
+    "response": {
+      "status": 200
+    }
+  },
+  {
+    "request": {
+      "url": "^/api/ordering/bun/unlock$",
+      "method": "POST"
+    },
+    "response": {
+      "status": 200
+    }
   }
 ]

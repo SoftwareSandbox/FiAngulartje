@@ -30,4 +30,20 @@ describe('Service: toppings', () => {
     expect(result.length).toBe(2);
   });
 
+  it('can lock a topping', ()=> {
+    let topping = {'id': '1', 'name': 'Hodor', 'price': 1};
+
+    httpBackend.expectPOST(`${baseurl}api/ordering/topping/lock`, topping).respond(200, 'OK');
+    Toppings.lock(topping);
+    httpBackend.flush();
+  });
+
+  it('can unlock a topping', ()=> {
+    let topping = {'id': '1', 'name': 'Hodor', 'price': 1};
+
+    httpBackend.expectPOST(`${baseurl}api/ordering/topping/unlock`, topping).respond(200, 'OK');
+    Toppings.unlock(topping);
+    httpBackend.flush();
+  });
+
 });
