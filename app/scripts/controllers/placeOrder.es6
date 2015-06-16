@@ -9,11 +9,9 @@
  */
 angular.module('fiAngulartjeApp')
   .controller('PlaceOrderCtrl', ['$scope', 'CompositionService', 'PlaceOrder', ($scope, CompositionService, PlaceOrder) => {
-    $scope.placeOrder = ()=> {
-      PlaceOrder.save(CompositionService.getComposition());
-    };
+    $scope.hasNoComposition = () => { return !CompositionService.hasComposition(); };
 
-    $scope.getPrice = () =>
-      CompositionService.getPrice();
+    $scope.placeOrder = () => { return PlaceOrder.save(CompositionService.getComposition()); };
 
+    $scope.getPrice = () => { return CompositionService.getPrice(); };
   }]);
