@@ -1,27 +1,32 @@
 [
   {
-    "id" : "1",
+    "id": "1",
     "name": "Mayo",
-    "price": "0.10"
+    "price": "0.10",
+    "image": "condiment.jpg"
   },
   {
-    "id" : "2",
+    "id": "2",
     "name": "Tomato Ketchup",
-    "price": "0.10"
+    "price": "0.10",
+    "image": "condiment.jpg"
   },
   {
-    "id" : "3",
+    "id": "3",
     "name": "Curry Ketchup",
-    "price": "0.10"
+    "price": "0.10",
+    "image": "condiment.jpg"
   },
   {
-    "id" : "4",
+    "id": "4",
     "name": "Honey",
-    "price": "0.15"
+    "price": "0.15",
+    "image": "condiment.jpg"
   },
   {
-    "id" : "5",
+    "id": "5",
     "name": "Relish",
-    "price": "0.15"
+    "price": "0.15",
+    "image": "condiment.jpg"
   }
 ]

@@ -45,7 +45,7 @@ describe('Service: compositionService', () => {
 
     let result = CompositionService.getPrice();
 
-    expect(result).toEqual(1005.67);
+    expect(result).toEqual('1005.67');
   });
 
 });

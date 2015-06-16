@@ -13,7 +13,7 @@ angular.module('fiAngulartjeApp')
       PlaceOrder.save(CompositionService.getComposition());
     };
 
-    $scope.getPrice = function(){
-      return CompositionService.getPrice()
-    }
+    $scope.getPrice = () =>
+      CompositionService.getPrice();
+
   }]);

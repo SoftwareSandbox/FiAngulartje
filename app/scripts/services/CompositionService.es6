@@ -20,20 +20,18 @@ angular.module('fiAngulartjeApp')
     }
 
     function hasValidComposition() {
-      if (composition.bun.price == undefined) {
+      if (composition.bun.price === undefined) {
         return false;
       }
-      if (composition.toppings.filter(function (topping) {
-          return topping.price == undefined
-        }).length > 0) {
+      if (composition.toppings.filter((topping) =>
+        topping.price === undefined)
+          .length > 0) {
         return false;
       }
-      if (composition.condiments.filter(function (condiment) {
-          return condiment.price == undefined
-        }).length > 0) {
-        return false;
-      }
-      return true;
+      return composition.condiments.filter((condiment)  =>
+          condiment.price === undefined
+        ).length <= 0;
+
     }
 
     function getPrice() {

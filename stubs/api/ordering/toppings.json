@@ -1,32 +1,38 @@
 [
-   {
-      "id": "1",
-      "name": "Gouda",
-      "price": "0.20"
-   },
-   {
-      "id": "2",
-      "name": "Grilled Ham",
-      "price": "0.20"
-   },
-   {
-      "id": "3",
-      "name": "Smoked Salmon",
-      "price": "0.30"
-   },
-   {
-      "id": "4",
-      "name": "Iceberg Salad",
-      "price": "0.05"
-   },
-   {
-      "id": "5",
-      "name": "Black Olives",
-      "price": "0.08"
-   },
-   {
-      "id": "6",
-      "name": "Walnuts",
-      "price": "0.10"
-   }
+  {
+    "id": "1",
+    "name": "Gouda",
+    "price": "0.20",
+    "image": "topping.jpg"
+  },
+  {
+    "id": "2",
+    "name": "Grilled Ham",
+    "price": "0.20",
+    "image": "topping.jpg"
+  },
+  {
+    "id": "3",
+    "name": "Smoked Salmon",
+    "price": "0.30",
+    "image": "topping.jpg"
+  },
+  {
+    "id": "4",
+    "name": "Iceberg Salad",
+    "price": "0.05",
+    "image": "topping.jpg"
+  },
+  {
+    "id": "5",
+    "name": "Black Olives",
+    "price": "0.08",
+    "image": "topping.jpg"
+  },
+  {
+    "id": "6",
+    "name": "Walnuts",
+    "price": "0.10",
+    "image": "topping.jpg"
+  }
 ]

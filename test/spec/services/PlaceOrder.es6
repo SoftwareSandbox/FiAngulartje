@@ -16,33 +16,33 @@ describe('Service: PlaceOrder', () => {
     httpBackend = $injector.get('$httpBackend');
     baseurl = $injector.get('Fiazard').baseurl;
     orderedSandwich = {
-       "_id": "1",
-       "bun": {
-          "_id": "1",
-          "name": "Italian",
-          "description": "Foccacia",
-          "price": "1"
+       '_id': '1',
+       'bun': {
+          '_id': '1',
+          'name': 'Italian',
+          'description': 'Foccacia',
+          'price': '1'
        },
-       "composition": [
+       'composition': [
           {
-             "name": "Grilled Ham",
-             "price": "0.10"
+             'name': 'Grilled Ham',
+             'price': '0.10'
           },
           {
-             "name": "Gouda",
-             "price": "0.10"
+             'name': 'Gouda',
+             'price': '0.10'
           },
           {
-             "name": "Walnuts",
-             "price": "0.10"
+             'name': 'Walnuts',
+             'price': '0.10'
           },
           {
-             "name": "Honey",
-             "price": "0.10"
+             'name': 'Honey',
+             'price': '0.10'
           }
        ],
-       "orderedOn": "20150513 10:29:30",
-       "price": "1.40"
+       'orderedOn': '20150513 10:29:30',
+       'price': '1.40'
     };
   }));
 
