@@ -1,17 +1,18 @@
 <div class="randomizer" data-ng-controller="RandomizerCtrl as RandomizerCtrl">
-  <div class="slots">
-    <slot items="RandomizerCtrl.buns" to-update="RandomizerCtrl.composition.bun" delay="0"/>
+  <div class="slotGroup">
+    <div class="slots">
+      <slot items="RandomizerCtrl.buns" to-update="RandomizerCtrl.composition.bun" delay="0"/>
+    </div>
+    <div class="slots" data-ng-repeat="topping in RandomizerCtrl.composition.toppings">
+      <slot items="RandomizerCtrl.toppings" to-update="RandomizerCtrl.composition.toppings[$index]" delay="500"/>
+    </div>
+    <button class="addButton" data-ng-click="RandomizerCtrl.addTopping()"><img src="/images/addicon.png" /></button>
+    <div class="slots" data-ng-repeat="condiment in RandomizerCtrl.composition.condiments">
+      <slot items="RandomizerCtrl.condiments" to-update="RandomizerCtrl.composition.condiments[$index]" delay="1000"/>
+    </div>
+    <button class="addButton" data-ng-click="RandomizerCtrl.addCondiment()"><img src="/images/addicon.png" /></button>
   </div>
-  <div class="slots" data-ng-repeat="topping in RandomizerCtrl.composition.toppings">
-    <slot items="RandomizerCtrl.toppings" to-update="RandomizerCtrl.composition.toppings[$index]" delay="500"/>
-  </div>
-  <button class="addButton" data-ng-click="RandomizerCtrl.addTopping()"><img src="/images/addicon.png" /></button>
-  <div class="slots" data-ng-repeat="condiment in RandomizerCtrl.composition.condiments">
-    <slot items="RandomizerCtrl.condiments" to-update="RandomizerCtrl.composition.condiments[$index]" delay="1000"/>
-  </div>
-  <button class="addButton" data-ng-click="RandomizerCtrl.addCondiment()"><img src="/images/addicon.png" /></button>
   <div class="randomizeButton">
-    <button data-ng-click="RandomizerCtrl.randomize()">Randomize</button>
-    <img src="images/handle.gif" data-ng-click="RandomizerCtrl.randomize()"/>
+    <div class="slot-arm" data-ng-click="RandomizerCtrl.randomize()" slot-arm></div>
   </div>
 </div>
