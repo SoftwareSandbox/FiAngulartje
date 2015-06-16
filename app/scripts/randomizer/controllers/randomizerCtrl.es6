@@ -13,6 +13,10 @@ angular.module('randomizer')
 
     this.addCondiment = () => { ctrl.composition.condiments.push({}); };
 
+    this.removeTopping = () => { if(ctrl.composition.toppings.length > 1) ctrl.composition.toppings.pop(); };
+
+    this.removeCondiment = () => { if(ctrl.composition.condiments.length > 1) ctrl.composition.condiments.pop(); };
+
     $scope.$watch(
       ()=> ctrl.composition,
       (newVal) => {

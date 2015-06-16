@@ -53,7 +53,7 @@ describe('RandomizerCtrl', function () {
 
     $scope.$apply();
 
-    expect($scope.composition).toBe(composition);
+    expect(RandomizerCtrl.composition).toBe(composition);
   });
 
   describe('randomize', () => {
@@ -66,21 +66,65 @@ describe('RandomizerCtrl', function () {
 
   describe('addTopping', () => {
     it('should add an empty object to toppings of composition', () => {
-      $scope.composition.toppings = [];
+      RandomizerCtrl.composition.toppings = [];
 
       RandomizerCtrl.addTopping();
 
-      expect($scope.composition.toppings[0]).toEqual({});
+      expect(RandomizerCtrl.composition.toppings[0]).toEqual({});
     });
   });
 
   describe('addCondiment', () => {
     it('should add an empty object to condiments of composition', () => {
-      $scope.composition.condiments = [];
+      RandomizerCtrl.composition.condiments = [];
 
       RandomizerCtrl.addCondiment();
 
-      expect($scope.composition.condiments[0]).toEqual({});
+      expect(RandomizerCtrl.composition.condiments[0]).toEqual({});
+    });
+  });
+
+  describe('removeTopping', () => {
+    it('should remove the last object from the toppings of composition given number of toppings is more than 1', () => {
+      var firstTopping = {};
+      RandomizerCtrl.composition.toppings = [firstTopping, {key: 'value'}];
+
+      RandomizerCtrl.removeTopping();
+
+      expect(RandomizerCtrl.composition.toppings.length).toBe(1);
+      expect(RandomizerCtrl.composition.toppings[0]).toBe(firstTopping);
+    });
+
+    it('should not remove the last object from the toppings of composition given number of toppings is 1', () => {
+      var firstTopping = {};
+      RandomizerCtrl.composition.toppings = [firstTopping];
+
+      RandomizerCtrl.removeTopping();
+
+      expect(RandomizerCtrl.composition.toppings.length).toBe(1);
+      expect(RandomizerCtrl.composition.toppings[0]).toBe(firstTopping);
+    });
+  });
+
+  describe('removeCondiment', () => {
+    it('should remove the last object from the condiments of composition given number of condiments is more than 1', () => {
+      var firstCondiment = {};
+      RandomizerCtrl.composition.condiments = [firstCondiment, {key: 'value'}];
+
+      RandomizerCtrl.removeCondiment();
+
+      expect(RandomizerCtrl.composition.condiments.length).toBe(1);
+      expect(RandomizerCtrl.composition.condiments[0]).toBe(firstCondiment);
+    });
+
+    it('should not remove the last object from the condiments of composition given number of condiments is 1', () => {
+      var firstCondiment = {};
+      RandomizerCtrl.composition.condiments = [firstCondiment];
+
+      RandomizerCtrl.removeCondiment();
+
+      expect(RandomizerCtrl.composition.condiments.length).toBe(1);
+      expect(RandomizerCtrl.composition.condiments[0]).toBe(firstCondiment);
     });
   });
 });

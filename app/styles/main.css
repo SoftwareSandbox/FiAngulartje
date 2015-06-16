@@ -84,8 +84,15 @@ body {
   margin-bottom: 15px;
 }
 
-.randomizer .addButton img {
+.randomizer .buttonGroup img {
   width: 10px;
+}
+
+.randomizer .buttonGroup {
+  display: inline-block;
+  width: 20px;
+  vertical-align: top;
+  padding-top: 23px;
 }
 
 .randomizeButton {
@@ -148,6 +155,7 @@ body {
   height: 213px;
   background-image: url("../images/handle.png");
   background-size: 880px 213px;
+  cursor: pointer;
 }
 
 @-webkit-keyframes play {
