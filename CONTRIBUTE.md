@@ -39,6 +39,8 @@ Fork [this repo](https://github.com/SoftwareSandbox/FiAngulartje/) into your own
 8. When the build is green, a contributor will accept/reject your changes + remove the feature-branch in order not to pollute the repo.
 9. Remove your feature branch locally (not necessary - but will make your local repo cleaner):  
   `git branch -d feature-branch-{featureId}`
+10. Remove your remote feature branch:  
+  `git push --delete origin feature-branch-{featureId}`
 
 
 ##Suggestions
