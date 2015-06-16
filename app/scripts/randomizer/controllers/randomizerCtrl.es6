@@ -9,6 +9,7 @@ angular.module('randomizer')
     $scope.composition;
 
     this.randomize = function () {
+      animateSlotArm();
       $scope.$broadcast('startSlots');
     };
 
@@ -34,5 +35,12 @@ angular.module('randomizer')
         $scope.composition = newVal;
       }
     );
+
+    function animateSlotArm(){
+      $('.slot-arm').toggleClass('slot-arm-animate');
+      setTimeout(function() {
+          $('.slot-arm').toggleClass('slot-arm-animate');
+      }, 700);
+    }
 
   }]);
