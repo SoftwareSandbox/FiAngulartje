@@ -21,6 +21,7 @@ body {
 .header {
   border-bottom: 1px solid #e5e5e5;
 }
+
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
   margin-top: 0;
@@ -42,6 +43,7 @@ body {
     max-width: 730px;
   }
 }
+
 .container-narrow > hr {
   margin: 30px 0;
 }
@@ -51,6 +53,7 @@ body {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
 }
+
 .jumbotron .btn {
   font-size: 21px;
   padding: 14px 24px;
@@ -60,16 +63,63 @@ body {
 .marketing {
   margin: 40px 0;
 }
+
 .marketing p + h4 {
   margin-top: 28px;
 }
 
-.shoppingcart{
+.shoppingcart {
   height: 25px;
 }
 
 .glyphicon-button {
   cursor: pointer;
+}
+
+.randomizer {
+  width: 100%;
+  background-color: silver;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.randomizeButton {
+  float: right;
+}
+
+.randomizeButton img {
+  height: 130px;
+}
+
+.slots {
+  display: inline-block;
+}
+
+.slot {
+  height: 100px;
+  overflow: hidden;
+  background-color: white;
+  width: 120px;
+  margin-left: 10px;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+}
+
+.slot .item {
+  height: 100px;
+}
+
+.slot .item img {
+  width: 120px;
+}
+
+.locked {
+  opacity: 0.5;
+}
+
+.slotContainer {
+  text-align: center;
 }
 
 /* Responsive: Portrait tablets and up */
@@ -81,10 +131,12 @@ body {
     padding-left: 0;
     padding-right: 0;
   }
+
   /* Space out the masthead */
   .header {
     margin-bottom: 30px;
   }
+
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;

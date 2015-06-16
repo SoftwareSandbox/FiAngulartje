@@ -42,6 +42,10 @@ angular
         url: '/products/category/:categoryId',
         templateUrl: 'views/products.html',
         controller: 'ProductsCtrl'
+      }).state('randomize', {
+        url: '/randomize',
+        templateUrl: 'views/randomize.html'
+
       })
       .state('shoppingCart', {
         url: '/shoppingCart',

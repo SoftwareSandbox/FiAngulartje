@@ -1,0 +1,26 @@
+[
+  {
+    "_id": "1",
+    "name": "Italian",
+    "price": "1",
+    "image": "bun.jpg"
+  },
+  {
+    "_id": "2",
+    "name": "White",
+    "price": "1",
+    "image": "bun.jpg"
+  },
+  {
+    "_id": "3",
+    "name": "Rye",
+    "price": "1",
+    "image": "bun.jpg"
+  },
+  {
+    "_id": "4",
+    "name": "Dark",
+    "price": "1",
+    "image": "bun.jpg"
+  }
+]

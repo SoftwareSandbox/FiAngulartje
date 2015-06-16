@@ -1,0 +1,15 @@
+[
+  {
+    "request": {
+      "url": "^/api/ordering/bun$",
+      "method": "GET"
+    },
+    "response": {
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "file": "api/ordering/buns.json"
+    }
+  }
+]

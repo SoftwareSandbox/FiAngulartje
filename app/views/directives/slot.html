@@ -1,0 +1,11 @@
+<div class="slotContainer">
+  <div class="slot" ng-class="{locked: locked}">
+    <div ng-repeat="item in items" class="item">
+      <img ng-src="images/{{item.image}}">
+    </div>
+  </div>
+  <br/>
+  {{toUpdate.name}}
+  <br/>
+  <input type="checkbox" ng-model="locked"/> Lock
+</div>

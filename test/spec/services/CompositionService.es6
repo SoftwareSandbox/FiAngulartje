@@ -21,13 +21,13 @@ describe('Service: compositionService', () => {
 
     let result = CompositionService.hasComposition();
 
-    expect(result).toBeTruthy();
+    expect(result).toBe(true);
   });
 
   it('hasComposition returns false when no composition', () => {
     let result = CompositionService.hasComposition();
 
-    expect(result).toBeFalsy();
+    expect(result).toBe(false);
   });
 
   it('getPrice returns null when there is no composition', () => {
@@ -45,7 +45,7 @@ describe('Service: compositionService', () => {
 
     let result = CompositionService.getPrice();
 
-    expect(result).toEqual(1005.67);
+    expect(result).toEqual('1005.67');
   });
 
 });

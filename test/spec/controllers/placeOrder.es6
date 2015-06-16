@@ -13,7 +13,7 @@ describe('Controller: PlaceOrderCtrl', () => {
   // Initialize the controller and a mock scope
   beforeEach(inject(($controller, $rootScope, _CompositionService_, _PlaceOrder_) => {
       scope = $rootScope.$new();
-      dummyComposition = {"name":"derp"};
+      dummyComposition = {'name':'derp'};
       compositionServiceMock = mockito4js.spy(_CompositionService_);
       placeOrderMock = mockito4js.spy(_PlaceOrder_);
 
@@ -29,12 +29,12 @@ describe('Controller: PlaceOrderCtrl', () => {
 
     it('posts the composition to the PlaceOrderService', ()=> {
       mockito4js.doReturn(dummyComposition).when(compositionServiceMock).getComposition();
-      
+
       scope.placeOrder();
-      
+
       mockito4js.verify(placeOrderMock, mockito4js.once()).save(dummyComposition);
     });
-  
+
   });
 })
 ;
