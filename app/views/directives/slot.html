@@ -1,7 +1,7 @@
 <div class="slotContainer">
   <div class="slot" ng-class="{locked: locked}">
     <div ng-repeat="item in items" class="item">
-      <img ng-src="images/{{item.image}}">
+      <img ng-src="data:{{item.imageType}};base64,{{item.image}}" />
     </div>
   </div>
   <br/>
