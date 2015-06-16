@@ -130,7 +130,7 @@ body {
 .slot-arm-animate {
   width: 88px;
   height: 213px;
-  background-image: url("http://bergasms.com/SlotMachine/full_handle2.png");
+  background-image: url("../images/handle.png");
 
   -webkit-animation: play .7s steps(10) 1;
   -moz-animation: play .7s steps(10) 1;
@@ -142,7 +142,7 @@ body {
 .slot-arm {
   width: 88px;
   height: 213px;
-  background-image: url("http://bergasms.com/SlotMachine/full_handle2.png");
+  background-image: url("../images/handle.png");
   background-size: 880px 213px;
 }
 
