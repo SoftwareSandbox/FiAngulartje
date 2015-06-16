@@ -8,5 +8,5 @@
  * Controller of the fiAngulartjeApp
  */
 angular.module('fiAngulartjeApp')
-  .controller('HomeCtrl', [() => {
-  }]);
+  .controller('HomeCtrl', () => {
+  });

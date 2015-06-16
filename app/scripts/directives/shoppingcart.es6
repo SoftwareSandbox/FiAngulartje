@@ -8,7 +8,7 @@
  */
 
 angular.module('fiAngulartjeApp')
-  .directive('shoppingcart', [() => {
+  .directive('shoppingcart', () => {
     return {
       templateUrl: 'views/directives/shoppingcart.html',
       restrict: 'E',
@@ -17,4 +17,4 @@ angular.module('fiAngulartjeApp')
         readonly: '=readonly'
       }
     };
-  }]);
+  });
