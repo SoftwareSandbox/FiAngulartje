@@ -83,6 +83,10 @@ body {
   padding: 5px;
 }
 
+.randomizer .addButton img {
+  width: 10px;
+}
+
 .randomizeButton {
   float: right;
 }
