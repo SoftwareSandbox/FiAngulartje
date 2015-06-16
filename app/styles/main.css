@@ -77,18 +77,17 @@ body {
 }
 
 .randomizer {
-  width: 100%;
-  background-color: silver;
+  width: 80%;
+  border: solid gray 6px;
   border-radius: 5px;
-  padding: 5px;
+  margin-top: 100px;
+  margin-bottom: 15px;
 }
 
 .randomizeButton {
   float: right;
-}
-
-.randomizeButton img {
-  height: 130px;
+  margin-top: -220px;
+  margin-right: -94px;
 }
 
 .slots {
@@ -120,6 +119,56 @@ body {
 
 .slotContainer {
   text-align: center;
+}
+
+.slotGroup {
+  text-align: center;
+  background-color: rgba(255,255,0,0.2);
+  padding: 10px;
+}
+
+.slot-arm-animate {
+  width: 88px;
+  height: 213px;
+  background-image: url("../images/handle.png");
+
+  -webkit-animation: play .7s steps(10) 1;
+  -moz-animation: play .7s steps(10) 1;
+  -ms-animation: play .7s steps(10) 1;
+  -o-animation: play .7s steps(10) 1;
+  animation: play .7s steps(10) 1;
+}
+
+.slot-arm {
+  width: 88px;
+  height: 213px;
+  background-image: url("../images/handle.png");
+  background-size: 880px 213px;
+}
+
+@-webkit-keyframes play {
+  from { background-position:    0px; }
+  to { background-position: -880px; }
+}
+
+@-moz-keyframes play {
+  from { background-position:    0px; }
+  to { background-position: -880px; }
+}
+
+@-ms-keyframes play {
+  from { background-position:    0px; }
+  to { background-position: -880px; }
+}
+
+@-o-keyframes play {
+  from { background-position:    0px; }
+  to { background-position: -880px; }
+}
+
+@keyframes play {
+  from { background-position:    0px; }
+  to { background-position: -880px; }
 }
 
 /* Responsive: Portrait tablets and up */
