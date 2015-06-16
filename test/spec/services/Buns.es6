@@ -24,10 +24,26 @@ describe('Service: buns', () => {
         {'id': '2', 'name': 'Cersei', 'price': 666.678}]
     );
 
-    let result = Buns.query();
+    let result = Buns.getAll();
     httpBackend.flush();
 
     expect(result.length).toBe(2);
+  });
+
+  it('can lock a bun', ()=> {
+    let bun = {'id': '1', 'name': 'Hodor', 'price': 1};
+
+    httpBackend.expectPOST(`${baseurl}api/ordering/bun/lock`, bun).respond(200, 'OK');
+    Buns.lock({'id': '1', 'name': 'Hodor', 'price': 1});
+    httpBackend.flush();
+  });
+
+  it('can unlock a bun', ()=> {
+    let bun = {'id': '1', 'name': 'Hodor', 'price': 1};
+
+    httpBackend.expectPOST(`${baseurl}api/ordering/bun/unlock`, bun).respond(200, 'OK');
+    Buns.unlock({'id': '1', 'name': 'Hodor', 'price': 1});
+    httpBackend.flush();
   });
 
 });
