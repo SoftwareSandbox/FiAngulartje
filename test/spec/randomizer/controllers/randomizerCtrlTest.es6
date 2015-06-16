@@ -27,6 +27,8 @@ describe('RandomizerCtrl', function () {
         Buns: Buns,
         Condiments: Condiments
       });
+
+      $scope = mockito4js.spy($scope);
     });
   });
 
@@ -47,24 +49,15 @@ describe('RandomizerCtrl', function () {
 
     $scope.$apply();
 
-    expect(RandomizerCtrl.composition).toBe(composition);
+    expect($scope.composition).toBe(composition);
   });
 
   describe('randomize', function () {
-    it('should create and put a randomized composition on the controller', function () {
+    it('should broadcast startSlots', function () {
       RandomizerCtrl.randomize();
 
-      expect(RandomizerCtrl.buns.indexOf(RandomizerCtrl.composition.bun)).not.toBe(-1);
-      expect(RandomizerCtrl.toppings.indexOf(RandomizerCtrl.composition.topping)).not.toBe(-1);
-      expect(RandomizerCtrl.condiments.indexOf(RandomizerCtrl.composition.condiment)).not.toBe(-1);
+      mockito4js.verify($scope, mockito4js.once()).$broadcast('startSlots')
     });
 
-    it('should set the Composition on the CompositionService', function () {
-      mockito4js.doNothing().when(CompositionService).setComposition(mockito4js.any(Object));
-
-      RandomizerCtrl.randomize();
-
-      mockito4js.verify(CompositionService, mockito4js.once()).setComposition(RandomizerCtrl.composition);
-    });
   })
 });

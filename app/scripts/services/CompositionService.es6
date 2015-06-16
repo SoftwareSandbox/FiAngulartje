@@ -9,7 +9,7 @@
  */
 angular.module('fiAngulartjeApp')
   .service('CompositionService', [() => {
-    let composition;
+    let composition = {bun: {}, toppings: [{}], condiments: [{}]};
 
     function getComposition() {
       return composition;
@@ -19,13 +19,25 @@ angular.module('fiAngulartjeApp')
       composition = comp;
     }
 
-    function hasComposition() {
-
-      return composition !== undefined;
+    function hasValidComposition() {
+      if (composition.bun.price == undefined) {
+        return false;
+      }
+      if (composition.toppings.filter(function (topping) {
+          return topping.price == undefined
+        }).length > 0) {
+        return false;
+      }
+      if (composition.condiments.filter(function (condiment) {
+          return condiment.price == undefined
+        }).length > 0) {
+        return false;
+      }
+      return true;
     }
 
     function getPrice() {
-      if (!hasComposition()) {
+      if (!hasValidComposition()) {
         return null;
       } else {
         let price = 0;
@@ -47,6 +59,6 @@ angular.module('fiAngulartjeApp')
       getComposition: getComposition,
       setComposition: setComposition,
       getPrice: getPrice,
-      hasComposition: hasComposition
+      hasComposition: hasValidComposition
     };
   }]);

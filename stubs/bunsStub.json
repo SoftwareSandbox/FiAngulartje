@@ -1,7 +1,7 @@
 [
   {
     "request": {
-      "url": "^/api/ordering/condiment$",
+      "url": "^/api/ordering/bun$",
       "method": "GET"
     },
     "response": {
@@ -9,7 +9,7 @@
       "headers": {
         "Content-Type": "application/json"
       },
-      "file": "api/ordering/condiments.json"
+      "file": "api/ordering/buns.json"
     }
   }
 ]

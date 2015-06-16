@@ -9,7 +9,7 @@
  */
 angular.module('fiAngulartjeApp')
   .controller('PlaceOrderCtrl', ['$scope', 'CompositionService', 'PlaceOrder', ($scope, CompositionService, PlaceOrder) => {
-    $scope.placeOrder = ()=>{
+    $scope.placeOrder = ()=> {
       PlaceOrder.save(CompositionService.getComposition());
     };
   }]);

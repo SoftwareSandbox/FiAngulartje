@@ -1,14 +1,16 @@
 <div class="randomizer" data-ng-controller="RandomizerCtrl as RandomizerCtrl">
-  <div class="slot">
-    <span>{{RandomizerCtrl.composition.bun}}</span>
+  <div class="slots">
+    <slot items="RandomizerCtrl.buns" to-update="composition.bun" delay="0"/>
   </div>
-  <div class="slot">
-    <span>{{RandomizerCtrl.composition.topping}}</span>
+  <div class="slots" >
+    <slot items="RandomizerCtrl.toppings" to-update="composition.toppings[0]" delay="500"/>
   </div>
-  <div class="slot">
-    <span>{{RandomizerCtrl.composition.condiment}}</span>
+  <!--<button data-ng-click="RandomizerCtrl.addTopping()">Add topping</button>-->
+  <div class="slots" >
+    <slot items="RandomizerCtrl.condiments" to-update="composition.condiment[0]" delay="1000"/>
   </div>
-  <div>
+  <!--<button data-ng-click="RandomizerCtrl.addCondiment()">Add condiment</button>-->
+  <div class="randomizeButton">
     <button data-ng-click="RandomizerCtrl.randomize()">Randomize</button>
   </div>
 </div>
