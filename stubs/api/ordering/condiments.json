@@ -9,24 +9,24 @@
     "id": "2",
     "name": "Tomato Ketchup",
     "price": "0.10",
-    "image": "condiment.jpg"
+    "image": "ketchup.jpg"
   },
   {
     "id": "3",
     "name": "Curry Ketchup",
     "price": "0.10",
-    "image": "condiment.jpg"
+    "image": "ketchup.jpg"
   },
   {
     "id": "4",
     "name": "Honey",
     "price": "0.15",
-    "image": "condiment.jpg"
+    "image": "honey.gif"
   },
   {
     "id": "5",
     "name": "Relish",
     "price": "0.15",
-    "image": "condiment.jpg"
+    "image": "sauce.jpg"
   }
 ]

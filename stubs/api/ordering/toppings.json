@@ -3,7 +3,7 @@
     "id": "1",
     "name": "Gouda",
     "price": "0.20",
-    "image": "topping.jpg"
+    "image": "cheese.jpg"
   },
   {
     "id": "2",
@@ -15,13 +15,13 @@
     "id": "3",
     "name": "Smoked Salmon",
     "price": "0.30",
-    "image": "topping.jpg"
+    "image": "salmon.jpg"
   },
   {
     "id": "4",
     "name": "Iceberg Salad",
     "price": "0.05",
-    "image": "topping.jpg"
+    "image": "lettuce.jpg"
   },
   {
     "id": "5",
