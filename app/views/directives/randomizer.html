@@ -1,17 +1,17 @@
 <div class="randomizer" data-ng-controller="RandomizerCtrl as RandomizerCtrl">
   <div class="slotGroup">
     <div class="slots">
-      <slot items="RandomizerCtrl.buns" to-update="RandomizerCtrl.composition.bun" delay="0"/>
+      <slot items="RandomizerCtrl.buns" type="buns" to-update="RandomizerCtrl.composition.bun" delay="0"/>
     </div>
     <div class="slots" data-ng-repeat="topping in RandomizerCtrl.composition.toppings track by $index">
-      <slot items="RandomizerCtrl.toppings" to-update="RandomizerCtrl.composition.toppings[$index]" delay="500"/>
+      <slot items="RandomizerCtrl.toppings" type="toppings" to-update="RandomizerCtrl.composition.toppings[$index]" delay="500"/>
     </div>
     <div class="buttonGroup">
       <button class="removeButton" data-ng-click="RandomizerCtrl.removeTopping()"><img src="/images/removeicon.png" /></button>
       <button class="addButton" data-ng-click="RandomizerCtrl.addTopping()"><img src="/images/addicon.png" /></button>
     </div>
     <div class="slots" data-ng-repeat="condiment in RandomizerCtrl.composition.condiments track by $index">
-      <slot items="RandomizerCtrl.condiments" to-update="RandomizerCtrl.composition.condiments[$index]" delay="1000"/>
+      <slot items="RandomizerCtrl.condiments" type="condiments" to-update="RandomizerCtrl.composition.condiments[$index]" delay="1000"/>
     </div>
     <div class="buttonGroup">
       <button class="removeButton" data-ng-click="RandomizerCtrl.removeCondiment()"><img src="/images/removeicon.png" /></button>

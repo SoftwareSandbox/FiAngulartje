@@ -25,6 +25,26 @@ describe('Controller: PlaceOrderCtrl', () => {
     })
   );
 
+  describe('hasNoComposition', () => {
+
+    it('should return true when compositionService has no composition', ()=> {
+      mockito4js.doReturn(false).when(compositionServiceMock).hasComposition();
+      
+      let result = scope.hasNoComposition();
+      
+      expect(result).toBe(true);
+    });
+
+    it('should return false when compositionService has a composition', ()=> {
+      mockito4js.doReturn(true).when(compositionServiceMock).hasComposition();
+      
+      let result = scope.hasNoComposition();
+      
+      expect(result).toBe(false);
+    });
+
+  });
+
   describe('placeOrder', ()=>{
 
     it('posts the composition to the PlaceOrderService', ()=> {
@@ -36,5 +56,6 @@ describe('Controller: PlaceOrderCtrl', () => {
     });
 
   });
+
 })
 ;

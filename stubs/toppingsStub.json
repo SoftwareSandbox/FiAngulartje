@@ -11,5 +11,23 @@
       },
       "file": "api/ordering/toppings.json"
     }
+  },
+  {
+    "request": {
+      "url": "^/api/ordering/topping/lock$",
+      "method": "POST"
+    },
+    "response": {
+      "status": 200
+    }
+  },
+  {
+    "request": {
+      "url": "^/api/ordering/topping/unlock$",
+      "method": "POST"
+    },
+    "response": {
+      "status": 200
+    }
   }
 ]
