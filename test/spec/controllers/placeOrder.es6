@@ -52,7 +52,7 @@ describe('Controller: PlaceOrderCtrl', () => {
 
       scope.placeOrder();
 
-      mockito4js.verify(placeOrderMock, mockito4js.once()).save(dummyComposition);
+      mockito4js.verify(placeOrderMock, mockito4js.once()).save(mockito4js.eq({sandwiches:[dummyComposition]}));
     });
 
   });
