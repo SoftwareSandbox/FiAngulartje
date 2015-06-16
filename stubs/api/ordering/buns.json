@@ -9,18 +9,18 @@
     "_id": "2",
     "name": "White",
     "price": "1",
-    "image": "bun.jpg"
+    "image": "bun1.jpg"
   },
   {
     "_id": "3",
     "name": "Rye",
     "price": "1",
-    "image": "bun.jpg"
+    "image": "bun2.jpg"
   },
   {
     "_id": "4",
     "name": "Dark",
     "price": "1",
-    "image": "bun.jpg"
+    "image": "bun3.jpg"
   }
 ]
