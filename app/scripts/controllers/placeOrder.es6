@@ -12,4 +12,8 @@ angular.module('fiAngulartjeApp')
     $scope.placeOrder = ()=> {
       PlaceOrder.save(CompositionService.getComposition());
     };
+
+    $scope.getPrice = function(){
+      return CompositionService.getPrice()
+    }
   }]);

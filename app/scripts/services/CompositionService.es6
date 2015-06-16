@@ -41,16 +41,16 @@ angular.module('fiAngulartjeApp')
         return null;
       } else {
         let price = 0;
-        price += composition.bun.price;
+        price += parseFloat(composition.bun.price);
 
         price += composition.toppings.reduce(function (total, current) {
-          return total + current.price;
+          return total + parseFloat(current.price);
         }, 0);
 
         price += composition.condiments.reduce(function (total, current) {
-          return total + current.price;
+          return total + parseFloat(current.price);
         }, 0);
-        return price;
+        return price.toFixed(2);
       }
 
     }

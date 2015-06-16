@@ -87,15 +87,19 @@ body {
   float: right;
 }
 
+.randomizeButton img {
+  height: 100%;
+}
+
 .slots {
   display: inline-block;
 }
 
 .slot {
-  height: 50px;
+  height: 100px;
   overflow: hidden;
   background-color: white;
-  width: 70px;
+  width: 120px;
   margin-left: 10px;
   text-align: center;
   position: relative;
@@ -103,7 +107,11 @@ body {
 }
 
 .slot .item {
-  height: 50px;
+  height: 100px;
+}
+
+.slot .item img {
+  height: 100px;
 }
 
 .locked {

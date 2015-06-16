@@ -20,7 +20,7 @@ angular.module('randomizer')
       $scope.composition.condiments.push({});
     };
 
-    $scope.$watch('composition', function (newVal) {
+    $scope.$watch(()=> $scope.composition, function (newVal) {
       if (newVal != undefined) {
         CompositionService.setComposition(newVal);
       }

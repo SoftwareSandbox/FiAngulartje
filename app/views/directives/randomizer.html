@@ -7,10 +7,11 @@
   </div>
   <!--<button data-ng-click="RandomizerCtrl.addTopping()">Add topping</button>-->
   <div class="slots" >
-    <slot items="RandomizerCtrl.condiments" to-update="composition.condiment[0]" delay="1000"/>
+    <slot items="RandomizerCtrl.condiments" to-update="composition.condiments[0]" delay="1000"/>
   </div>
   <!--<button data-ng-click="RandomizerCtrl.addCondiment()">Add condiment</button>-->
   <div class="randomizeButton">
     <button data-ng-click="RandomizerCtrl.randomize()">Randomize</button>
+    <img src="images/handle.gif" data-ng-click="RandomizerCtrl.randomize()"/>
   </div>
 </div>

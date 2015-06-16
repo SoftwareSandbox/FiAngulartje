@@ -2,25 +2,21 @@
    {
       "_id": "1",
       "name": "Italian",
-      "description": "Foccacia",
       "price":"1"
    },
    {
       "_id": "2",
       "name": "White",
-      "description": "Plain white bread",
       "price":"1"
    },
    {
       "_id": "3",
       "name": "Rye",
-      "description": "Rye bread",
       "price":"1"
    },
    {
       "_id": "4",
       "name": "Dark",
-      "description": "Black bread",
       "price":"1"
    }
 ]
