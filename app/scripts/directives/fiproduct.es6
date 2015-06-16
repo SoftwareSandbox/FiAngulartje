@@ -14,7 +14,7 @@ angular.module('fiAngulartjeApp')
       scope: {
         product: '=product'
       },
-      controller: ['$scope, ngDialog', function ($scope, ngDialog) {
+      controller: ['$scope', 'ngDialog', function ($scope, ngDialog) {
         let ingredientsarray = $scope.product.composition.concat($scope.product.sauces);
         $scope.ingredients = ingredientsarray.join(', ');
         $scope.price = `€ ${$scope.product.price}`;
