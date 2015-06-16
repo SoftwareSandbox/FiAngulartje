@@ -5,33 +5,31 @@ angular.module('randomizer')
     this.buns = Buns.query();
     this.toppings = Toppings.query();
     this.condiments = Condiments.query();
+    this.composition;
 
-    $scope.composition;
+    this.randomize = () => { $scope.$broadcast('startSlots'); };
 
-    this.randomize = function () {
-      $scope.$broadcast('startSlots');
-    };
+    this.addTopping = () => { ctrl.composition.toppings.push({}); };
 
-    this.addTopping = function () {
-      $scope.composition.toppings.push({});
-    };
+    this.addCondiment = () => { ctrl.composition.condiments.push({}); };
 
-    this.addCondiment = function () {
-      $scope.composition.condiments.push({});
-    };
+    this.removeTopping = () => { if(ctrl.composition.toppings.length > 1) ctrl.composition.toppings.pop(); };
 
-    $scope.$watch(()=> $scope.composition, function (newVal) {
-      if (newVal != undefined) {
-        CompositionService.setComposition(newVal);
-      }
-    });
+    this.removeCondiment = () => { if(ctrl.composition.condiments.length > 1) ctrl.composition.condiments.pop(); };
 
     $scope.$watch(
-      function () {
-        return CompositionService.getComposition()
-      },
-      function (newVal) {
-        $scope.composition = newVal;
+      ()=> ctrl.composition,
+      (newVal) => {
+        if (newVal != undefined) {
+          CompositionService.setComposition(newVal);
+        }
+      }
+    );
+
+    $scope.$watch(
+      () => CompositionService.getComposition(),
+      (newVal) => {
+        ctrl.composition = newVal;
       }
     );
 
