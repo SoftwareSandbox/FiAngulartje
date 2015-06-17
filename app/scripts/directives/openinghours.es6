@@ -12,7 +12,7 @@ angular.module('fiAngulartjeApp')
     return {
       templateUrl: 'views/directives/openinghours.html',
       restrict: 'E',
-      controller: function ($scope) {
+      controller: ['$scope', function ($scope) {
         let days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
         $scope.formatHours = (hours) => {
@@ -32,6 +32,6 @@ angular.module('fiAngulartjeApp')
         };
 
         $scope.openinghours = Openinghours.query();
-      }
+      }]
     };
   }]);

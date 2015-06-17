@@ -7,14 +7,14 @@
  * # FiProduct
  */
 angular.module('fiAngulartjeApp')
-  .directive('fiproduct', [() => {
+  .directive('fiproduct', () => {
     return {
       templateUrl: 'views/directives/fiproduct.html',
       restrict: 'E',
       scope: {
         product: '=product'
       },
-      controller: function ($scope, ngDialog) {
+      controller: ['$scope', 'ngDialog', function ($scope, ngDialog) {
         let ingredientsarray = $scope.product.composition.concat($scope.product.sauces);
         $scope.ingredients = ingredientsarray.join(', ');
         $scope.price = `€ ${$scope.product.price}`;
@@ -26,6 +26,6 @@ angular.module('fiAngulartjeApp')
             controller: 'AddToCartCtrl'
           });
         };
-      }
+      }]
     };
-  }]);
+  });
