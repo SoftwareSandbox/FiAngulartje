@@ -9,4 +9,5 @@ Learning project in which we try to make our sandwich ordering site better. This
 
 [![Throughput Graph](https://graphs.waffle.io/softwaresandbox/fiangulartje/throughput.svg)](https://waffle.io/softwaresandbox/fiangulartje/metrics)
 
+## Contrinuting
 Check [this important info](CONTRIBUTE.md) if you're interested in Contributing.

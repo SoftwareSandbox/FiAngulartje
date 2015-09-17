@@ -2,7 +2,6 @@ How to contribute
 =================
 
 ##Fork this repo
-
 Fork [this repo](https://github.com/SoftwareSandbox/FiAngulartje/) into your own account, e.g. `git@github.com:MyGithubAccount/FiAngulartje.git` and clone your forked repo locally:  
  ```
  git clone https://github.com/MyGithubAccount/FiAngulartje
@@ -22,7 +21,12 @@ Fork [this repo](https://github.com/SoftwareSandbox/FiAngulartje/) into your own
   bower install
   grunt serve
 ````
-3. Your default browser should have popped up with a working initial screen of the application. 
+3. Your default browser should have popped up with a working initial screen of the application. Which uses a stubbed backend.
+4. If you want to start the application with integration to the Fiazard backend, run the following command
+````
+  grint serve:integrate
+````
+
 
 ##Pick up backlog items
 1. Pick up a backlog item at [waffle.io](https://waffle.io/softwaresandbox/fiangulartje) and assign it to yourself
