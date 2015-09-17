@@ -24,7 +24,7 @@ grunt serve
 3. Your default browser should have popped up with a working initial screen of the application which uses a stubbed backend.
 4. If you want to start the application with integration with the Fiazard backend, run the following command:
 ````
-grint serve:integrate
+grunt serve:integrate
 ````
 
 
