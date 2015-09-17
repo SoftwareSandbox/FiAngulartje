@@ -3,16 +3,16 @@ How to contribute
 
 ##Fork this repo
 Fork [this repo](https://github.com/SoftwareSandbox/FiAngulartje/) into your own account, e.g. `git@github.com:MyGithubAccount/FiAngulartje.git` and clone your forked repo locally:  
- ```
- git clone https://github.com/MyGithubAccount/FiAngulartje
- git remote add swsb https://github.com/SoftwareSandbox/FiAngulartje
- ```
+  ```
+  git clone https://github.com/MyGithubAccount/FiAngulartje
+  git remote add swsb https://github.com/SoftwareSandbox/FiAngulartje
+  ```
 
 
 ##Setting up your environment
 1. Install [nodejs](http://nodejs.org/), which you'll need for [npm](https://www.npmjs.org/). On Ubuntu? Follow [these instructions](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager)
-2. After cloning your forked repo, run the following commands
-````
+2. After cloning your forked repo, run the following commands:
+  ````
   sudo npm install -g yo
   sudo npm install -g generator-angular
   sudo npm install -g bower
@@ -20,12 +20,12 @@ Fork [this repo](https://github.com/SoftwareSandbox/FiAngulartje/) into your own
   sudo npm install
   bower install
   grunt serve
-````
-3. Your default browser should have popped up with a working initial screen of the application. Which uses a stubbed backend.
-4. If you want to start the application with integration to the Fiazard backend, run the following command
-````
+  ````
+3. Your default browser should have popped up with a working initial screen of the application which uses a stubbed backend.
+4. If you want to start the application with integration with the Fiazard backend, run the following command:
+  ````
   grint serve:integrate
-````
+  ````
 
 
 ##Pick up backlog items
